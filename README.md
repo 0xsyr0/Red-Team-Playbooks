@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="300" height="300" src="https://github.com/0xsyr0/Red-Team-Playbooks/blob/main/files/red-team.png">
+  <img width="300" height="300" src="https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/images/red-team.png">
 </p>
 
 # Red Teaming Playbooks
