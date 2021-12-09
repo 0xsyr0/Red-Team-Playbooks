@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="300" height="300" src="https://github.com/0xsyr0/Red-Team-Playbooks/blob/main/files/red-team.png">
+</p>
+
 # Red Teaming Playbooks
 
 This repository contains cutting-edge open-source security notes and tools that will help you during your Red Team assessments.
