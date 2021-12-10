@@ -7,7 +7,7 @@
 This repository contains cutting-edge open-source security notes and tools that will help you during your Red Team assessments.
 
 ## Table of Contents
-- [0-Kickoff.md](#https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/0-Kickoff.md)
+- [0-Kickoff.md](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/0-Kickoff.md)
 - [1-Reconnaissance.md](#1-Reconnaissance.md)
 - [2-Weaponization.md](#2-Weaponization.md)
 - [3-Delivery.md](#3-Delivery.md)
