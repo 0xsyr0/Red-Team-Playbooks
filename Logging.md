@@ -23,23 +23,23 @@ PROMPT="%{$fg_bold[grey]%}[%{$reset_color%}%{$fg_bold[${host_color}]%}%n@%m%{$re
 #%{$fg_bold[cyan]%}❯%{$reset_color%} "
 ```
 ### Linux Logging Examples
-// Logging using tee
+[//] (Logging using tee)
 ```c
 command args | tee <file>.log
 ```
-// Append to an existing log file
+[//] (Append to an existing log file)
 ```c
 command args | tee -a <file>.log
 ```
-// All commands logging using script utility
+[//] (All commands logging using script utility)
 ```c
 script <file>.log
 ```
-// Single command logging using script utility
+[//] (Single command logging using script utility)
 ```c
 script -c 'command args' <file>.log
 ```
-// Metasploit spool command
+[//] (Metasploit spool command)
 ```c
 msf> spool <file>.log
 ```
