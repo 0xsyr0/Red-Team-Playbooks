@@ -1,3 +1,42 @@
+# Introduction
+
+What is the mission objective - what are we setting out to archive or demonstrate?
+
+# Standard Operation Procedure (SOP) Checklist
+
+## Preperation
+
+* Attack Plan
+* Objectives
+* Stakeholders
+* Targets
+* Timelines and Duration
+* Planned Activities
+* Risk Management
+* Authorization
+* Notification
+
+## Execution
+
+* Work Towards Objectives
+* Scanning
+* Attacks
+* Tactics, Techniques, Procedures (TTP)
+* Documenting Activity and Logs
+* Defects and Incidents
+* Status Updates
+* Syncs and Triage Meetings
+
+## Wrap Up
+
+* Clean-Up
+* Archival
+* Eviction Support
+* Summary
+* Debrief
+* Reports
+* Reflect
+
 # General Questions
 
 * Ensure all questionnaire information has been completed.
@@ -33,3 +72,7 @@
 * Will we be facing controls such as Cisco ISE or NAC? If yes - are we allowed to bypass these controls by moving around the building and searching for unsecured ports to hijack from other devices such as printers or phones?
 * Can we test into the evening and after normal business hours?
 * Is there any dress code? Usually we are going for the high end of their dress code unless we are doing some physical social engineering.
+
+# Next
+- [1 Reconnaissance](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1-Reconnaissance.md)
+- [1.1 Scanning and Enumeration](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1.1-Scanning-and-Enumeration.md)

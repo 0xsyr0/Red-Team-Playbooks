@@ -1,7 +1,14 @@
+# Introduction
 
-## Footprinting
--OSINT
--DNS
+# Tooling
 
-## Scanning and Enumeration
--WEB
+# Examples
+1.1 Scanning and Enumeration
+
+# Previous
+
+- [Kickoff](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/0-Kickoff/0-Kickoff.md)
+
+# Next
+
+- [1.1 Scanning and Enumeration](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1.1-Scanning-and-Enumeration.md)
