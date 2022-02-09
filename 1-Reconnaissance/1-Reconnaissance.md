@@ -7,7 +7,7 @@
 
 ### Previous
 
-- [Kickoff](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/0-Kickoff/0-Kickoff.md)
+- [Kickoff](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md)
 
 ### Next
 
