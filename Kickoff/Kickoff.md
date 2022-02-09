@@ -2,9 +2,9 @@
 
 What is the mission objective - what are we setting out to archive or demonstrate?
 
-# Standard Operation Procedure (SOP) Checklist
+## Standard Operation Procedure (SOP) Checklist
 
-## Preperation
+### Preperation
 
 * Attack Plan
 * Objectives
@@ -16,7 +16,7 @@ What is the mission objective - what are we setting out to archive or demonstrat
 * Authorization
 * Notification
 
-## Execution
+### Execution
 
 * Work Towards Objectives
 * Scanning
@@ -27,7 +27,7 @@ What is the mission objective - what are we setting out to archive or demonstrat
 * Status Updates
 * Syncs and Triage Meetings
 
-## Wrap Up
+### Wrap Up
 
 * Clean-Up
 * Archival
@@ -37,7 +37,7 @@ What is the mission objective - what are we setting out to archive or demonstrat
 * Reports
 * Reflect
 
-# General Questions
+## General Questions
 
 * Ensure all questionnaire information has been completed.
 * If all in-scope IP addresses have been provided:
@@ -57,7 +57,7 @@ What is the mission objective - what are we setting out to archive or demonstrat
 - Lockout observation window
 ```
 
-# PTK Related Questions
+## PTK Related Questions
 
 * Has the PTK been deployed yet? If not, can it be dropped at the latest final business day before we start with our assessment? This is necessary to ensure that no issues arising during the deployment.
 * Does the PTK run on a laptop/workstation or in a vSphere environment?
@@ -65,7 +65,7 @@ What is the mission objective - what are we setting out to archive or demonstrat
 * Dies the PTK have full access to all hosts in scope of the network?
 * Is the PTK deployed on the same subnet as the employee clients?
 
-# Onsite Related Questions
+## Onsite Related Questions
 
 * On arrival to the site, should we immediately introduce ourselves to the receptionist? Or are we permitted to simply walk in, see if we are stopped, and if not trying to find a desk or open network port to start with initial testing?
 * When onsite, are we permitted to interact with unlocked employee workstations?
@@ -73,6 +73,6 @@ What is the mission objective - what are we setting out to archive or demonstrat
 * Can we test into the evening and after normal business hours?
 * Is there any dress code? Usually we are going for the high end of their dress code unless we are doing some physical social engineering.
 
-# Next
+### Next
 - [1 Reconnaissance](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1-Reconnaissance.md)
 - [1.1 Scanning and Enumeration](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1.1-Scanning-and-Enumeration.md)

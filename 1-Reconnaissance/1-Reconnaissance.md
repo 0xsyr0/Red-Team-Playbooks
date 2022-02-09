@@ -1,14 +1,14 @@
 # Introduction
 
-# Tooling
+## Tooling
 
-# Examples
+## Examples
 1.1 Scanning and Enumeration
 
-# Previous
+### Previous
 
 - [Kickoff](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/0-Kickoff/0-Kickoff.md)
 
-# Next
+### Next
 
 - [1.1 Scanning and Enumeration](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1.1-Scanning-and-Enumeration.md)
