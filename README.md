@@ -11,7 +11,7 @@ I tried as good as i can to all resources i used in this projects. If i used cod
 ## Table of Contents
 
 - [Kickoff](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md)
-- [0 Operations](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/0-Operations/0-Operations.md)
+- [Operations](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md)
 - [1 Reconnaissance](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1-Reconnaissance.md)
 	- [1.1 Scanning and Enumeration](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1.1-Scanning-and-Enumeration.md)
 - [2 Weaponization](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/2-Weaponization/2-Weaponization.md)

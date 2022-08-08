@@ -23,14 +23,14 @@
 | Intelligence X | OSINT Search Engine | https://intelx.io |
 | GHunt |  GHunt is a modulable OSINT tool designed to evolve over the years, and incorporates many techniques to investigate Google accounts, or objects. | https://github.com/mxrch/GHunt |
 | linkedin2username | Generate username lists from companies on LinkedIn. | https://github.com/initstring/linkedin2username |
-| Sherlock | Hunt down social media accounts by username across social networks | https://github.com/sherlock-project/sherlock |
+| Sherlock | Hunt down social media accounts by username across social networks. | https://github.com/sherlock-project/sherlock |
 | Exploit-DB - Google Hacking Database | Exploit Database Google Dorks | https://www.exploit-db.com/google-hacking-database |
 | DeHashed | Breach Monitoring  | https://dehashed.com |
 | dehashQuery | This is a script that can be used in conjunction with dehashed.com. Dehashed allows anyone who has an API key to query their API for credentials that may exist within a breach database. This script simply uses the dehashed API and sorts the information returned. | https://github.com/grahamhelton/dehashQuery/blob/main/dehashQuery.sh |
 
 ### Previous
 
-- [0 Operations](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/0-Operations/0-Operations.md)
+- [Operations](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md)
 
 ### Next
 

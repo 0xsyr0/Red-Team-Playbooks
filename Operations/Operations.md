@@ -118,6 +118,15 @@ Get-ChildItem -Path D: -File -System -Recurse | Tee-Object -FilePath "C:\temp\<f
 msf> spool <file>.log
 ```
 
+## Meetings
+
+### Schedule
+
+| Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+| --- | --- | --- | --- | --- | --- | --- |
+| Assessment Kickoff | | Sync | | Weekly Review | | |
+| Planning | | Sync | | Weekly Review | | |
+
 ### Previous
 
 - [Kickoff](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md)

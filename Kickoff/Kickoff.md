@@ -74,4 +74,4 @@ What is the mission objective - what are we setting out to archive or demonstrat
 * Is there any dress code? Usually we are going for the high end of their dress code unless we are doing some physical social engineering.
 
 ### Next
-- [0 Operations](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/0-Operations/0-Operations.md)
+- [Operations](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md)
