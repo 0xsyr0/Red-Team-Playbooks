@@ -1,39 +1,32 @@
-# Introduction
-
-## Tooling
+# 1 Reconnaissance
 
 ### Enumeration
 
 | Name | Description | URL |
 | --- | --- | --- |
-| Nmap |  | https://github.com/nmap/nmap |
-| BashScan |  | https://github.com/astryzia/BashScan |
-| Amass |  | https://github.com/OWASP/Amass |
-| naabu |  | https://github.com/projectdiscovery/naabu |
-| subfinder |  | https://github.com/projectdiscovery/subfinder |
-| Knock Subdomain Scan |  | https://github.com/guelfoweb/knock |
-| IPinfo |  | https://ipinfo.io/ |
-| crt.sh |  | https://crt.sh |
-| Spyse |  | https://spyse.com |
-| Censys |  | https://search.censys.io/ |
-| dnsx |  | https://github.com/projectdiscovery/dnsx |
-| DNSdumpster |  | https://dnsdumpster.com |
-| proxify |  | https://github.com/projectdiscovery/proxify |
-| reconFTW |  | https://github.com/six2dez/reconftw |
-| enum4linux |  | https://github.com/CiscoCXSecurity/enum4linux |
+| Nmap | Network Scanner | https://github.com/nmap/nmap |
+| Amass | The OWASP Amass Project performs network mapping of attack surfaces and external asset discovery using open source information gathering and active reconnaissance techniques. | https://github.com/OWASP/Amass |
+| naabu | Naabu is a port scanning tool written in Go that allows you to enumerate valid ports for hosts in a fast and reliable manner. | https://github.com/projectdiscovery/naabu |
+| subfinder | Fast passive subdomain enumeration tool. | https://github.com/projectdiscovery/subfinder |
+| Knock Subdomain Scan | Knockpy is a python3 tool designed to quickly enumerate subdomains on a target domain through dictionary attack. | https://github.com/guelfoweb/knock |
+| IPinfo | The trusted source for IP address data. | https://ipinfo.io |
+| crt.sh | Certificate Monitoring | https://crt.sh |
+| Censys | Attack Surface Monitoring | https://search.censys.io |
+| DNSdumpster | DNSdumpster.com is a FREE domain research tool that can discover hosts related to a domain. | https://dnsdumpster.com |
+| dnsx | Fast and multi-purpose DNS toolkit allow to run multiple DNS queries.  | https://github.com/projectdiscovery/dnsx |
+| proxify | Swiss Army Knife Proxy for rapid deployments. | https://github.com/projectdiscovery/proxify |
 
 ### OSINT
 
 | Name | Description | URL |
-| Intelligence X |  | https://intelx.io |
-| NerdyData |  | https://www.nerdydata.com |
-| GHunt |  | https://github.com/mxrch/GHunt |
-| Sherlock |  | https://github.com/sherlock-project/sherlock |
-| Exploit-DB - Google Hacking Database |  | https://www.exploit-db.com/google-hacking-database |
-
-## Examples
-
-1.1 Scanning and Enumeration
+| --- | --- | --- |
+| Intelligence X | OSINT Search Engine | https://intelx.io |
+| GHunt |  GHunt is a modulable OSINT tool designed to evolve over the years, and incorporates many techniques to investigate Google accounts, or objects. | https://github.com/mxrch/GHunt |
+| linkedin2username | Generate username lists from companies on LinkedIn. | https://github.com/initstring/linkedin2username |
+| Sherlock | Hunt down social media accounts by username across social networks | https://github.com/sherlock-project/sherlock |
+| Exploit-DB - Google Hacking Database | Exploit Database Google Dorks | https://www.exploit-db.com/google-hacking-database |
+| DeHashed | Breach Monitoring  | https://dehashed.com |
+| dehashQuery | This is a script that can be used in conjunction with dehashed.com. Dehashed allows anyone who has an API key to query their API for credentials that may exist within a breach database. This script simply uses the dehashed API and sorts the information returned. | https://github.com/grahamhelton/dehashQuery/blob/main/dehashQuery.sh |
 
 ### Previous
 
