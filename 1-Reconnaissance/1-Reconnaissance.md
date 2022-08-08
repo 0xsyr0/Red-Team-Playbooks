@@ -30,7 +30,7 @@
 
 ### Previous
 
-- [Kickoff](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md)
+- [0 Operations](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/0-Operations/0-Operations.md)
 
 ### Next
 

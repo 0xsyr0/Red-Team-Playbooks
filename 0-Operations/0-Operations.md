@@ -117,3 +117,11 @@ Get-ChildItem -Path D: -File -System -Recurse | Tee-Object -FilePath "C:\temp\<f
 ```c
 msf> spool <file>.log
 ```
+
+### Previous
+
+- [Kickoff](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md)
+
+### Next
+
+- [1 Enumeration](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1-Enumeration.md)
