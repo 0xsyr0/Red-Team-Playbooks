@@ -124,4 +124,4 @@ msf> spool <file>.log
 
 ### Next
 
-- [1 Enumeration](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1-Enumeration.md)
+- [1 Enumeration](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1-Reconnaissance.md)
