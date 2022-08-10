@@ -4,6 +4,8 @@
 
 | Name | Description | URL |
 | --- | --- | --- |
+| Donut | Donut is a position-independent code that enables in-memory execution of VBScript, JScript, EXE, DLL files and dotNET assemblies. | https://github.com/TheWover/donut |
+| ScareCrow | ScareCrow is a payload creation framework for side loading (not injecting) into a legitimate Windows process (bypassing Application Whitelisting controls). | https://github.com/optiv/ScareCrow |
 | OffensiveNim | Experiments in weaponizing Nim for implant development and general offensive operations. | https://github.com/byt3bl33d3r/OffensiveNim |
 | OffensiveRust | Experiments in weaponizing Rust for implant development and general offensive operations. | https://github.com/trickster0/OffensiveRust |
 
