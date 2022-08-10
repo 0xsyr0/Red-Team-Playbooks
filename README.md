@@ -41,6 +41,6 @@ I tried as good as i can to all resources i used in this projects. If i used cod
 
 ## Special thanks and a huge shoutout to the following people
 
-IppSec, 0xdf, xct, John Hammond, Alh4zr3d, securibee, Paul Seekamp, Vickie Li, James Kettle, STÖK, carlospolop, Swissky, Rasta Mouse, g0dmode, bigb0sss, g0tmi1k, md.d0x, gentilkiwi, byt3bl33d3r, cube0x0, HarmJ0y, S3cur3Th1sSh1t, PinkDraconian, PwnFunction, imaibou, christophetd and all the people behind these awesome repositories i referenced in this collection!
+IppSec, 0xdf, xct, John Hammond, Alh4zr3d, securibee, Paul Seekamp, Vickie Li, James Kettle, STÖK, carlospolop, Swissky, snovvcrash, RastaMouse, g0dmode, bigb0sss, g0tmi1k, md.d0x, gentilkiwi, byt3bl33d3r, cube0x0, HarmJ0y, S3cur3Th1sSh1t, PinkDraconian, PwnFunction, imaibou, christophetd and all the people behind these awesome repositories i referenced in this collection!
 
 Thank you all for your hard work, support and inspiration since the start of my hacking journey!

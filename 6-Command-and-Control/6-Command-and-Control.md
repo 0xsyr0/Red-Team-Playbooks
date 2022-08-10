@@ -5,7 +5,7 @@
 | Mythic | A cross-platform, post-exploit, red teaming framework built with python3, docker, docker-compose, and a web browser UI. | https://github.com/its-a-feature/Mythic |
 | silver | Sliver is an open source cross-platform adversary emulation/red team framework, it can be used by organizations of all sizes to perform security testing. | https://github.com/BishopFox/sliver |
 | Empire | Empire 4 is a post-exploitation framework that includes a pure-PowerShell Windows agents, Python 3.x Linux/OS X agents, and C# agents. | https://github.com/BC-SECURITY/Empire |
-| DeathStart | DeathStar is a Python script that uses Empire's RESTful API to automate gaining Domain and/or Enterprise Admin rights in Active Directory environments using some of the most common offensive TTPs. | https://github.com/byt3bl33d3r/DeathStar |
+| DeathStar | DeathStar is a Python script that uses Empire's RESTful API to automate gaining Domain and/or Enterprise Admin rights in Active Directory environments using some of the most common offensive TTPs. | https://github.com/byt3bl33d3r/DeathStar |
 
 ## C2 Installation
 
@@ -42,13 +42,25 @@ c2ops@c2:~$ ln /dev/null ~/.bash_history -sf
 
 ### SSH
 
-```c
 * Copy authorized_keys to the .ssh folder in the home directory of root and c2ops
 * Change the permission of the authorized_keys file
+* Copy sshd_config to /etc/ssh/
+
+```c
 root@c2:~# chmod 644 /home/c2ops/.ssh/authorized_keys
 root@c2:~# chown root /home/c2ops/.ssh/authorized_keys
-* Copy sshd_config to /etc/ssh/
 ```
+
+### fail2ban
+
+* Copy fail2ban.conf to /etc/fail2ban/
+* Copy jail.local to /etc/fail2ban/
+* Copy nginx-badbots.conf to /etc/fail2ban/filter.d/
+* Copy nginx-noscript.conf /etc/fail2ban/filter.d/
+
+### psad
+
+* copy psad psad.conf
 
 ### iptables
 
@@ -61,7 +73,7 @@ root@c2:~/.scripts# cat iptables.sh
 /sbin/iptables -P INPUT DROP
 /sbin/iptables -P OUTPUT ACCEPT
 /sbin/iptables -I INPUT -i lo -j ACCEPT
-/sbin/iptables -A INPUT -p tcp --match multiport --dports 2342 -j ACCEPT
+/sbin/iptables -A INPUT -p tcp --match multiport --dports 22 -j ACCEPT
 /sbin/iptables -A INPUT -p tcp --match multiport --dports 80 -j ACCEPT
 /sbin/iptables -A INPUT -p tcp --match multiport --dports 443 -j ACCEPT
 /sbin/iptables -A INPUT -p tcp --match multiport --dports 53 -j ACCEPT
@@ -76,13 +88,6 @@ root@c2:~# ./iptables.sh
 ```
 
 It is recommendet to only allow access from known `IP addresses`!
-
-### OOB DNS
-
-```c
-root@c2:~/opt/01_information_gathering# git clone https://github.com/JuxhinDB/OOB-Server
-root@c2:~/opt/01_information_gathering/OOB-Server# ./setup
-```
 
 ### crontab
 
@@ -107,6 +112,13 @@ root@c2:~# systemctl disable apache2
 root@c2:~# systemctl disable exim4
 root@c2:~# apt-get purge exim4
 root@c2:~# apt-get purge apache2
+```
+
+### OOB DNS
+
+```c
+root@c2:~/opt/01_information_gathering# git clone https://github.com/JuxhinDB/OOB-Server
+root@c2:~/opt/01_information_gathering/OOB-Server# ./setup
 ```
 
 ### Nginx
@@ -164,17 +176,6 @@ root@c2:~$tc/letsencrypt/live/example.com# ln -s ../../archive/example.com/chain
 root@c2:~$tc/letsencrypt/live/example.com# ln -s ../../archive/example.com/fullchain2.pem fullchain.pem
 root@c2:~$tc/letsencrypt/live/example.com# ln -s ../../archive/example.com/privkey2.pem privkey.pem
 ```
-
-### fail2ban
-
-* Copy fail2ban.conf to /etc/fail2ban/
-* Copy jail.local to /etc/fail2ban/
-* Copy nginx-badbots.conf to /etc/fail2ban/filter.d/
-* Copy nginx-noscript.conf /etc/fail2ban/filter.d/
-
-### psad
-
-* copy psad psad.conf
 
 ### Services
 

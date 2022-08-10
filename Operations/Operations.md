@@ -85,31 +85,31 @@ PROMPT="%{$fg_bold[grey]%}[%{$reset_color%}%{$fg_bold[${host_color}]%}%n@%m%{$re
 #### Logging using tee
 
 ```c
-command args | tee <file>.log
+command args | tee <FILE>.log
 ```
 
 #### Append to an existing log file
 
 ```c
-command args | tee -a <file>.log
+command args | tee -a <FILE>.log
 ```
 
 #### All commands logging using script utility
 
 ```c
-script <file>.log
+script <FILE>.log
 ```
 
 #### Single command logging using script utility
 
 ```c
-script -c 'command args' <file>.log
+script -c 'command args' <FILE>.log
 ```
 
 ### Windows Logging Examples
 
 ```c
-Get-ChildItem -Path D: -File -System -Recurse | Tee-Object -FilePath "C:\temp\<file>.txt" -Append | Out-File C:\temp\<file>.txt
+Get-ChildItem -Path D: -File -System -Recurse | Tee-Object -FilePath "C:\temp\<FILE>.txt" -Append | Out-File C:\temp\<FILE>.txt
 ```
 
 ### Metasploit spool command
@@ -126,6 +126,173 @@ msf> spool <file>.log
 | --- | --- | --- | --- | --- | --- | --- |
 | Assessment Kickoff | | Sync | | Weekly Review | | |
 | Planning | | Sync | | Weekly Review | | |
+
+## Operations Server Installation
+
+### Update Server OS
+
+```c
+root@operations:~# apt-get update && apt-get upgrade && apt-get dist-upgrade && apt-get autoremove && apt-get autoclean
+```
+
+### Set Timezone
+
+```c
+root@operations:~# timedatectl set-timezone <COUNTRY>/<CITY>
+```
+
+### Packages
+
+```c
+root@operations:~# apt-get install apt-transport-https fail2ban git golang p7zip-full pst-utils python3-pip python3-tk tree zip
+```
+
+### User Configuration
+
+```c
+root@operations:~# useradd -m ops
+root@operations:~# passwd ops
+root@operations:~# usermod -aG sudo ops
+root@operations:~# usermod -s /bin/bash ops
+ops@operations:~$ ln /dev/null ~/.bash_history -sf
+```
+
+### Update fstab
+
+```c
+root@operations:~# vi /etc/fstab
+proc  /proc       proc    defaults,hidepid=2    0    0
+none  /dev/pts    devpts  rw,gid=5,mode=620    0    0
+none  /run/shm    tmpfs   defaults    0    0
+```
+
+### SSH
+
+```c
+root@operations:~# chmod 644 /home/ops/.ssh/authorized_keys
+root@operations:~# chown root /home/ops/.ssh/authorized_keys
+```
+
+### fail2ban
+
+* Copy fail2ban.conf to /etc/fail2ban/
+* Copy jail.local to /etc/fail2ban/
+* Copy nginx-badbots.conf to /etc/fail2ban/filter.d/
+* Copy nginx-noscript.conf /etc/fail2ban/filter.d/
+
+### psad
+
+* copy psad psad.conf
+
+### iptables
+
+```c
+* Create iptables.sh in /root/.scripts/
+root@operations:~/.scripts# cat iptables.sh
+#!/bin/bash
+
+/sbin/iptables -F
+/sbin/iptables -P INPUT DROP
+/sbin/iptables -P OUTPUT ACCEPT
+/sbin/iptables -I INPUT -i lo -j ACCEPT
+/sbin/iptables -A INPUT -p tcp --match multiport --dports 22 -j ACCEPT
+/sbin/iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
+/sbin/iptables -A INPUT -m conntrack --ctstate NEW,ESTABLISHED,RELATED -j ACCEPT
+/usr/sbin/netfilter-persistent save
+/usr/sbin/iptables-save > /root/custom-ip-tables-rules
+
+root@operations:~# chmod +x iptables.sh
+root@operations:~# ./iptables.sh
+```
+
+It is recommendet to only allow access from known `IP addresses`!
+
+### tmux tpm
+
+```c
+ops@operations:~$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+```
+
+#### .tmux.conf
+
+```c
+set -g default-terminal screen-256color
+set -g history-limit 10000
+set -g base-index 1
+set -g mouse on
+set -g terminal-overrides "xterm*:XT:smcup@:rmcup@:"
+set -g renumber-windows on
+set -g set-clipboard on
+set -g status-interval 3
+set -sg escape-time 0
+setw -g mode-keys vi
+set-option -g allow-rename off
+set-window-option -g automatic-rename off
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-sensible'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+run '~/.tmux/plugins/tpm/tpm'
+run-shell ~/clone/path/resurrect.tmux
+```
+
+### Caldera
+
+```c
+ops@operations:~$ git clone https://github.com/mitre/caldera.git --recursive
+ops@operations:~$ cd caldera
+ops@operations:~/opt/caldera$ pip3 install -r requirements.txt
+ops@operations:~/opt/caldera$ python3 server.py --insecure
+```
+
+#### Error: AttributeError: module 'lib' has no attribute 'X509_V_FLAG_CB_ISSUER_CHECK'
+
+```c
+ops@operations:~$ pip3 install -U cryptography
+ops@operations:~$ sudo apt-get remove python3-openssl -y
+ops@operations:~$ sudo apt-get autoremove
+ops@operations:~$ pip3 install -U cryptography
+```
+
+### VECTR
+
+```c
+root@operations:/# curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+root@operations:/# add-apt-repository \
+   "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+   $(lsb_release -cs) \
+   stable"
+root@operations:/# apt-get update
+root@operations:/# apt-get install docker-ce docker-ce-cli containerd.io docker-compose unzip
+root@operations:/# apt-get upgrade
+root@operations:/# systemctl enable docker
+ops@operations:~/opt$ mkdir vectr
+ops@operations:~/opt/vectr$ wget https://github.com/SecurityRiskAdvisors/VECTR/releases/download/ce-8.4.3/sra-vectr-runtime-8.4.3-ce.zip
+ops@operations:~/opt/vectr$ unzip sra-vectr-runtime-8.4.3-ce.zip
+ops@operations:~/opt/vectr$ sudo docker-compose up -d
+```
+
+#### /etc/hosts
+
+Related to the port forwarding, it is necessary to add the name of the configuration to
+the `/etc/hosts` file.
+
+```c
+127.0.0.1	localhost
+127.0.0.1   sravectr.internal
+```
+
+#### Access
+
+```c
+$ ssh -i ~/.ssh/id_rsa ops@<RHOST> -L 8081:localhost:8081 -N -f
+```
+
+### Ghostwriter
+
+```C
+ops@operations:~/opt$ git clone https://github.com/GhostManager/Ghostwriter.git
+ops@operations:~/opt/Ghostwriter$ ./ghostwriter-cli-linux install
+```
 
 ### Previous
 
