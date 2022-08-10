@@ -306,4 +306,4 @@ ops@operations:~/opt/Ghostwriter$ ./ghostwriter-cli-linux install
 
 ### Next
 
-- [1 Enumeration](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1-Reconnaissance.md)
+- [1 Reconnaissance](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1-Reconnaissance.md)
