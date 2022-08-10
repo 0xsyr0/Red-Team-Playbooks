@@ -7,22 +7,14 @@
 | Empire | Empire 4 is a post-exploitation framework that includes a pure-PowerShell Windows agents, Python 3.x Linux/OS X agents, and C# agents. | https://github.com/BC-SECURITY/Empire |
 | DeathStart | DeathStar is a Python script that uses Empire's RESTful API to automate gaining Domain and/or Enterprise Admin rights in Active Directory environments using some of the most common offensive TTPs. | https://github.com/byt3bl33d3r/DeathStar |
 
-# C2 Installation
+## C2 Installation
 
 Ansible playbook for this setup is planned but not yet started.
-
-## Backup
-
-```c
-* Create backups in case of a fresh installation
-* Backup letsencrypt
-* Backup /root/.ssh/
-```
 
 ### Set Timezone
 
 ```c
-root@c2:~# timedatectl set-timezone Country/City
+root@c2:~# timedatectl set-timezone <COUNTRY>/<CITY>
 ```
 
 ### Update Server OS
@@ -111,10 +103,10 @@ none  /run/shm    tmpfs   defaults    0    0
 ### Services cleanup
 
 ```c
-* root@c2:~# systemctl disable apache2
-* root@c2:~# systemctl disable exim4
-* root@c2:~# apt-get purge exim4
-* root@c2:~# apt-get purge apache2
+root@c2:~# systemctl disable apache2
+root@c2:~# systemctl disable exim4
+root@c2:~# apt-get purge exim4
+root@c2:~# apt-get purge apache2
 ```
 
 ### Nginx
@@ -122,19 +114,23 @@ none  /run/shm    tmpfs   defaults    0    0
 ```c
 root@c2:~# add-apt-repository ppa:nginx/stable
 root@c2:~# apt-get install nginx
+```
+
 * Copy nginx.conf /etc/nginx/
 * Copy website to /etc/nginx/sites-available/
 * Set symlink ln -s /etc/nginx/sites-available/website /etc/nginx/sites-enabled/
 * Copy index.html to /var/www/html
 * Create files folder in /var/www/html
 * Download the following binaries:
+
+```c
 root@c2:/var/www/html/files# wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1
 root@c2:/var/www/html/files# wget https://github.com/carlospolop/PEASS-ng/releases/download/20220515/linpeas.sh
 root@c2:/var/www/html/files# wget https://github.com/carlospolop/PEASS-ng/releases/download/20220515/winPEAS.bat
 root@c2:/var/www/html/files# wget https://github.com/carlospolop/PEASS-ng/releases/download/20220515/winPEASx64.exe
 root@c2:/var/www/html/files# wget https://github.com/carlospolop/PEASS-ng/releases/download/20220515/winPEASx86.exe
 root@c2:/var/www/html/files# wget https://eternallybored.org/misc/netcat/netcat-win32-1.12.zip
-* Unzip netcat-win32-1.12.zip
+- Unzip netcat-win32-1.12.zip
 root@c2:/var/www/html/files# wget https://github.com/3ndG4me/socat/releases/download/v1.7.3.3/socatx64.bin
 root@c2:/var/www/html/files# wget https://github.com/3ndG4me/socat/releases/download/v1.7.3.3/socatx64.exe
 root@c2:/var/www/html/files# wget https://github.com/3ndG4me/socat/releases/download/v1.7.3.3/socatx86.bin
@@ -143,10 +139,11 @@ root@c2:/var/www/html/files# wget https://github.com/3ndG4me/socat/releases/down
 root@c2:/var/www/html/files# wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy32
 root@c2:/var/www/html/files# wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64
 root@c2:/var/www/html/files# wget https://github.com/BloodHoundAD/BloodHound/raw/master/Collectors/SharpHound.exe
-root@c2:/var/www/html/files# wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20210810-2/mimikatz_trunk.7z
-* Unzip mimikatz_trunk.7z
 root@c2:/var/www/html/files# wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1
+root@c2:/var/www/html/files# wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20210810-2/mimikatz_trunk.7z
 ```
+
+* Unzip mimikatz_trunk.7z
 
 ### Let's Encrypt
 
@@ -154,8 +151,12 @@ Only necessary if the server got installed from a backup!
 
 ```c
 root@c2:~# apt-get install letsencrypt
+```
+
 * Copy letsencrypt to /etc/
 * Set symlinks:
+
+```c
 root@c2:~# cd /etc/letsencrypt/live/example.com
 root@c2:/etc/letsencrypt/live/example.com# rm cert.pem chain.pem fullchain.pem privkey.pem
 root@c2:~$tc/letsencrypt/live/example.com# ln -s ../../archive/example.com/cert2.pem cert.pem
@@ -166,18 +167,14 @@ root@c2:~$tc/letsencrypt/live/example.com# ln -s ../../archive/example.com/privk
 
 ### fail2ban
 
-```c
 * Copy fail2ban.conf to /etc/fail2ban/
 * Copy jail.local to /etc/fail2ban/
 * Copy nginx-badbots.conf to /etc/fail2ban/filter.d/
 * Copy nginx-noscript.conf /etc/fail2ban/filter.d/
-```
 
 ### psad
 
-```c
 * copy psad psad.conf
-```
 
 ### Services
 
@@ -198,7 +195,11 @@ root@c2:~# systemctl reboot
 
 ```c
 c2ops@c2:~$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-c2ops@c2:~$ cat .tmux.conf
+```
+
+#### .tmux.conf
+
+```c
 set -g default-terminal screen-256color
 set -g history-limit 10000
 set -g base-index 1
@@ -232,7 +233,11 @@ c2ops@c2:~/opt/frameworks$ msfconsole
 ```c
 c2ops@c2:~/opt/frameworks$ git clone --recursive https://github.com/BC-SECURITY/Empire.git
 c2ops@c2:~/opt/frameworks/Empire$ sudo ./setup/install.sh
+```
+
 * Install all stagers
+
+```c
 c2ops@c2:~$ python3 -m pip install --user pipx
 c2ops@c2:~$ sudo apt-get install python3.8-venv
 c2ops@c2:~$ .local/bin/pipx install deathstar-empire
@@ -400,11 +405,15 @@ c2ops@c2:~/opt/13_social_engineering_tools/gophish$ wget https://github.com/goph
 c2ops@c2:~/opt/13_social_engineering_tools/gophish$ unzip gophish-v0.11.0-linux-64bit.zip
 c2ops@c2:~/opt/13_social_engineering_tools/gophish$ chmod +x gophish
 c2ops@c2:~/opt/13_social_engineering_tools/gophish$ sudo ./gophish
-
-// Access
-$ ssh -i ~/.ssh/vnoCxv23 c2ops@89.163.219.56 -L 3333:localhost:3333 -N -f
-URL: https://localhost:3333/login?next=%2F
 ```
+
+#### Access
+
+```
+$ ssh -i ~/.ssh/id_rsa c2ops@<RHOST> -L 3333:localhost:3333 -N -f
+```
+
+> https://localhost:3333/login?next=%2F
 
 ### theHarvester
 
