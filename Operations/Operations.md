@@ -134,6 +134,10 @@ msf> spool <file>.log
   <img src="https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/files/assessment_template.png">
 </p>
 
+### Template
+
+[assessment_template.xmind](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/files/assessment_template.xmind)
+
 ## Operations Server Installation
 
 ### Update Server OS
