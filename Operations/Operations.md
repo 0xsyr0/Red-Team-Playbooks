@@ -20,6 +20,16 @@
 - Build back changes (DNS spoofing for example).
 - Nmap -A -T4 is probably not a good idea. It's not a CTF!
 
+## Meetings
+
+### Schedule
+
+| | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| Start | Assessment Kickoff | | Sync | | Weekly Review | | |
+| Weekly | Planning | | Sync | | Weekly Review | | |
+| Closing | Planning | | Sync | | Closing / Assessment Review | | |
+
 ## Folder Structure on operations server
 
 ```c
@@ -118,14 +128,11 @@ Get-ChildItem -Path D: -File -System -Recurse | Tee-Object -FilePath "C:\temp\<F
 msf> spool <file>.log
 ```
 
-## Meetings
+## Assessment Timeline
 
-### Schedule
-
-| Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
-| --- | --- | --- | --- | --- | --- | --- |
-| Assessment Kickoff | | Sync | | Weekly Review | | |
-| Planning | | Sync | | Weekly Review | | |
+<p align="center">
+  <img src="https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/files/assessment_template.png">
+</p>
 
 ## Operations Server Installation
 
@@ -277,7 +284,6 @@ Related to the port forwarding, it is necessary to add the name of the configura
 the `/etc/hosts` file.
 
 ```c
-127.0.0.1	localhost
 127.0.0.1   sravectr.internal
 ```
 
