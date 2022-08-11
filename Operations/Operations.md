@@ -66,6 +66,8 @@ assessment_name
 * Note every attempt even it's a failure
 * Create and update a report storyboard during the process
 
+For adding `time and date` and the current `IP address`, add the required commands to either the `.bashrc` or to the `.zshrc`.
+
 ### Bash local IP address
 
 ```c
