@@ -587,8 +587,7 @@ Time to add a new campaign. Pretty straight forward.
 | Send Emails By: | By setting a date you can scale the interval of sending emails. I recommend to add 5 days from the start to not get in trouble with outlook.com. |
 | Sending Profile: | <ASSESSMENT_NAME> |
 | Groups: | <ASSESSMENT_NAME> |
-
-Launch Campaign
+| Launch Campaign | |
 
 <p align="center">
   <img src="https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/files/gophish_results.png">
