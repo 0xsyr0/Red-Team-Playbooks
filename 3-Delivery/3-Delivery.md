@@ -19,10 +19,10 @@
 	- [Accessing Admin Panel](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#accessing-admin-panel)
 	- [Configuration](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#configuration)
 		- [Account Settings](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#account-settings)
-	- [Landing Pages](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#landing-pages)
-	- [Email Templates](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#email-templates)
-	- [Users & Groups](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#users--groups)
-	- [Campaigns](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#campaigns)
+		- [Landing Pages](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#landing-pages)
+		- [Email Templates](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#email-templates)
+		- [Users & Groups](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#users--groups)
+		- [Campaigns](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#campaigns)
 
 ## Tooling
 
