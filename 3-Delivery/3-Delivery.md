@@ -456,7 +456,9 @@ $ ssh -i ~/.ssh/id_rsa phisher@<LHOST> -L 3333:localhost:3333 -N -f
 
 ### Accessing Campaign Websites
 
-> https://<DOMAIN>/?rid=<RID>
+```c
+https://<DOMAIN>/?rid=<RID>
+```
 
 ### Configuration
 
