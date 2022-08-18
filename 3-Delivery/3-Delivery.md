@@ -476,7 +476,7 @@ For example by using `MailHog`.
 | --- | --- |
 | IMAP Host: | imap.outlook.com |
 | IMAP Port: | 993 |
-| IMAP Username: | <EXAMPLE>@outlook.com | 
+| IMAP Username: | EXAMPLE@outlook.com | 
 | IMAP Password: | ********************************* |
 | Use TLS: | Check |
 
@@ -485,9 +485,9 @@ For example by using `MailHog`.
 | Field | Value |
 | --- | --- |
 | Name: | <ASSESSMENT_NAME> |
-| SMTP From: | <EXAMPLE>@outlook.com |
+| SMTP From: | EXAMPLE@outlook.com |
 | HOST: | smtp.outlook.com:587 |
-| Username: | <EXAMPLE>@outlook.com |
+| Username: | EXAMPLE@outlook.com |
 | Password: | ********************************* |
 | Ignore Certificate Errors: | Check |
 
@@ -521,7 +521,7 @@ No need to worry ;)
 | Field | Value |
 | --- | --- |
 | Name: | <ASSESSMENT_NAME> |
-| Envelope Sender: | <EXAMPLE>@outlook.com | 
+| Envelope Sender: | EXAMPLE@outlook.com | 
 | Subject: | Security Monitoring Report, Endpoints and Applications |
 | Add Tracking Image: | Check |
 
