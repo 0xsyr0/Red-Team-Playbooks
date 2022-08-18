@@ -2,10 +2,12 @@
 
 | Name | Description | URL |
 | --- | --- | --- |
-| Gophish |  | https://github.com/gophish/gophish |
-| The Social-Engineer Toolkit (SET) |  | https://github.com/trustedsec/social-engineer-toolkit |
+| Gophish | Open-Source Phishing Toolkit | https://github.com/gophish/gophish |
+| The Social-Engineer Toolkit (SET) | The Social-Engineer Toolkit (SET) repository from TrustedSec | https://github.com/trustedsec/social-engineer-toolkit |
 
 # Phishing Server Server Installation
+
+## Preparation
 
 * Getting a domain from:
 	* https://inwx.com
