@@ -22,6 +22,7 @@
 | --- | --- | --- |
 | Intelligence X | OSINT Search Engine | https://intelx.io |
 | GHunt |  GHunt is a modulable OSINT tool designed to evolve over the years, and incorporates many techniques to investigate Google accounts, or objects. | https://github.com/mxrch/GHunt |
+| hunter | Hunter lets you find professional email addresses in seconds and connect with the people that matter for your business. | https://hunter.io |
 | linkedin2username | Generate username lists from companies on LinkedIn. | https://github.com/initstring/linkedin2username |
 | Sherlock | Hunt down social media accounts by username across social networks. | https://github.com/sherlock-project/sherlock |
 | Exploit-DB - Google Hacking Database | Exploit Database Google Dorks | https://www.exploit-db.com/google-hacking-database |
