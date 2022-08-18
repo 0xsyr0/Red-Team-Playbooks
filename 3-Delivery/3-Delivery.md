@@ -1,11 +1,37 @@
 # 3 Delivery
 
+## Table of Contents
+
+- [Tooling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#tooling)
+- [Phishing Server Installation](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#phishing-server-installation)
+	- [Preparation](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#preparation)
+		- [Add phisher User](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#add-phisher-user)
+		- [Password Changes](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#password-changes)
+	- [Basic Tooling & Updates](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#basic-tooling--updates)
+		- [Set Timezone](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#set-timezone)
+	- [SSH](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#ssh)
+	- [Tmux](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#tmux)
+	- [Nginx](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#nginx)
+	- [Let's Encrypt](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#lets-encrypt)
+	- [GoPhish](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#gophish)
+		- [config.json](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#configjson)
+		- [Port Forwarding Admin Panel](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#port-forwarding-admin-panel)
+				- [Accessing Admin Panel](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#accessing-admin-panel)
+				- [Configuration](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#configuration)
+					- [Account Settings](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#account-settings)
+				- [Landing Pages](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#landing-pages)
+				- [Email Templates](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#email-templates)
+				- [Users & Groups](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#users--groups)
+				- [Campaigns](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/3-Delivery.md#campaigns)
+
+## Tooling
+
 | Name | Description | URL |
 | --- | --- | --- |
 | Gophish | Open-Source Phishing Toolkit | https://github.com/gophish/gophish |
 | The Social-Engineer Toolkit (SET) | The Social-Engineer Toolkit (SET) repository from TrustedSec | https://github.com/trustedsec/social-engineer-toolkit |
 
-# Phishing Server Server Installation
+# Phishing Server Installation
 
 ## Preparation
 
@@ -214,7 +240,7 @@ root@phishingserver:~# systemctl restart sshd
 $ ssh -i ~/.ssh/id_rsa phisher@<LHOST>
 ```
 
-## tmux
+## Tmux
 
 ### tmux tpm
 
