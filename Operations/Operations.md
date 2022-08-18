@@ -7,7 +7,7 @@
 - [Meetings](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#meetings)
 	- [Schedule](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#schedule)
 - [Folder Structure](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#folder-structure)
-- [Examples of Screenshots](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#examples-of-screenshots)
+- [Screenshot Naming Scheme](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#screenshot-naming-scheme)
 - [Logging](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#logging)
 	- [Basic logging and Documentation Handling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#basic-logging-and-documentation-handling)
 - [Assessment Timeline](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#assessment-timeline)
@@ -66,7 +66,7 @@ assessment_name
 └── README.md
 ```
 
-### Examples of Screenshots
+### Screenshot Naming Scheme
 
 - 20220801_1508_10.10.1.106_nmap_tcp445.png
 - 20220801_1508_10.10.1.106_smb_enumeration.png
