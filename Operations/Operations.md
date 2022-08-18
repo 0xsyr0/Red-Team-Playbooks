@@ -6,6 +6,7 @@
 - [Golden Rules](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#golden-rules)
 - [Meetings](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#meetings)
 	- [Schedule](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#schedule)
+- [Reporting](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#reporting)
 - [Folder Structure](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#folder-structure)
 - [Screenshot Naming Scheme](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#screenshot-naming-scheme)
 - [Logging](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#logging)
@@ -45,6 +46,20 @@
 | Start | Assessment Kickoff | | Sync | | Weekly Review | | |
 | Weekly | Planning | | Sync | | Weekly Review | | |
 | Closing | Planning | | Sync | | Closing / Assessment Review | | |
+
+## Reporting
+
+### Report Structure
+
+* Executive summary
+* Technical summary
+* Assessment results
+	* Vulnerability descriptions
+	* Recommendations
+* Supporting information/evidence
+	* Screenshots
+	* Output from tools
+	* Methodology for testing
 
 ## Folder Structure
 
@@ -327,20 +342,6 @@ $ ssh -i ~/.ssh/id_rsa ops@<RHOST> -L 8081:localhost:8081 -N -f
 ops@operations:~/opt$ git clone https://github.com/GhostManager/Ghostwriter.git
 ops@operations:~/opt/Ghostwriter$ ./ghostwriter-cli-linux install
 ```
-
-## Reporting
-
-### Report Structure
-
-* Executive summary
-* Technical summary
-* Assessment results
-	* Vulnerability descriptions
-	* Recommendations
-* Supporting information/evidence
-	* Screenshots
-	* Output from tools
-	* Methodology for testing
 
 ### Previous
 
