@@ -472,48 +472,58 @@ For example by using `MailHog`.
 
 ##### Reporting Settings
 
-IMAP Host: imap.outlook.com
-IMAP Port: 993
-IMAP Username: <EXAMPLE>@outlook.com
-IMAP Password: *********************************
-Use TLS: Check
+| Field | Value |
+| --- | --- |
+| IMAP Host: | imap.outlook.com |
+| IMAP Port: | 993 |
+| IMAP Username: | <EXAMPLE>@outlook.com | 
+| IMAP Password: | ********************************* |
+| Use TLS: | Check |
 
 ##### Sending Profile
 
-Name: <ASSESSMENT_NAME>
-SMTP From: <EXAMPLE>@outlook.com
-HOST: smtp.outlook.com:587
-Username: <EXAMPLE>@outlook.com
-Password: *********************************
-Ignore Certificate Errors: Check
+| Field | Value |
+| --- | --- |
+| Name: | <ASSESSMENT_NAME> |
+| SMTP From: | <EXAMPLE>@outlook.com |
+| HOST: | smtp.outlook.com:587 |
+| Username: | <EXAMPLE>@outlook.com |
+| Password: | ********************************* |
+| Ignore Certificate Errors: | Check |
 
 Depedending on your `Rules of Engangement (ROE)` i would recommend to set custom `Email Headers`.
 
 ##### Landing Pages
 
-Name: https://confluence.<TARGET_DOMAIN>
-Import: https://confluence.<TARGET_DOMAIN>
-Capture Submitted Data: Check
-Capture Passwords: Check
-Redirecto to: https://confluence.<TARGET_DOMAIN>
+| Field | Value |
+| --- | --- |
+| Name: | https://confluence.<TARGET_DOMAIN> |
+| Import: | https://confluence.<TARGET_DOMAIN> |
+| Capture | Submitted Data: Check |
+| Capture Passwords: | Check | 
+| Redirecto to: | https://confluence.<TARGET_DOMAIN> |
 
 If your purchased `TLD` matches the domain of your company, the change is high that users do not raise
 concern if they get redirected to the same `login page` you copied your landing page from.
 
 Example:
 
+```c
 Original domain: examplecompany.io
 Fake domain: security-examplecompany.io
+```
 
 The may think they made a typo, try to login again after got redirected and everything works fine.
 No need to worry ;)
 
 ##### Email Templates
 
-Name: <ASSESSMENT_NAME>
-Envelope Sender: <EXAMPLE>@outlook.com
-Subject: Security Monitoring Report, Endpoints and Applications
-Add Tracking Image: Check
+| Field | Value |
+| --- | --- |
+| Name: | <ASSESSMENT_NAME> |
+| Envelope Sender: | <EXAMPLE>@outlook.com | 
+| Subject: | Security Monitoring Report, Endpoints and Applications |
+| Add Tracking Image: | Check |
 
 If you be able to get a leaked sample of an internal email or by `Spear Phishing` someone, i would recommend to
 use the signature and formatting for more authenticity.
@@ -554,7 +564,9 @@ Enrich the email template with as much information as possible you gathered from
 
 I recommend to gather usernames from social media platforms like `LinkedIn`, `Instagram` and `Facebook`. The email address schema is also easy to figure out. For example by using `Maltego`, https://hunter.io or by simply checking their website for a `security.txt`.
 
-> https://<TARGET_DOMAIN>/security.txt
+```c
+https://<TARGET_DOMAIN>/security.txt
+```
 
 You may also find contact forms for your `sock puppets` to contact them and get a response.
 
@@ -564,18 +576,20 @@ The only necessary fields are `First Name`, `Last Name` and `Email`. The filed o
 
 Time to add a new campaign. Pretty straight forward.
 
-Campaign name: <ASSESSMENT_NAME>
-Email Template: <ASSESSMENT_NAME>
-Landing Page: https://confluence.<TARGET_DOMAIN>
-Launch Date: Leave it as it is if you want to start directly after saving the campaign
-Send Emails By: By setting a date you can scale the interval of sending emails. I recommend to add 5 days from the start to not get in trouble with outlook.com.
-Sending Profile: <ASSESSMENT_NAME>
-Groups: <ASSESSMENT_NAME>
+| Field | Value |
+| --- | --- |
+| Campaign name: | <ASSESSMENT_NAME> |
+| Email Template: | <ASSESSMENT_NAME> |
+| Landing Page: | https://confluence.<TARGET_DOMAIN> |
+| Launch Date: | Leave it as it is if you want to start directly after saving the campaign. |
+| Send Emails By: | By setting a date you can scale the interval of sending emails. I recommend to add 5 days from the start to not get in trouble with outlook.com. |
+| Sending Profile: | <ASSESSMENT_NAME> |
+| Groups: | <ASSESSMENT_NAME> |
 
 Launch Campaign
 
 <p align="center">
-  <img width="300" height="300" src="https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/files/gophish_results.png">
+  <img src="https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/3-Delivery/files/gophish_results.png">
 </p>
 
 ### Previous
