@@ -1,10 +1,30 @@
-# Introduction
+# Kickoff
 
-What is the mission objective - what are we setting out to archive or demonstrate?
+## Table of Contents
 
-## Standard Operation Procedure (SOP) Checklist
+- [Introduction](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md#introduction)
+- [Standard Operation Procedure (SOP) Checklist](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md#standard-operation-procedure-sop-checklist)
+	- [Preparation](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md#preparation)
+	- [Execution](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md#execution)
+	- [Wrap up](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md#wrap-up)
+- [Kickoff Meeting](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md#kickoff-meeting)
+	- [Structuring](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md#structuring)
+- [General Questions](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md#general-questions)
+- [Penetration Testing Kit (PTK)](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md#penetration-testing-kit-ptk)
+- [Onsite](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md#onsite)
 
-### Preperation
+## Introduction
+
+* What is the Red Team
+* What is the job of the Red Team
+* Why this scope has been chosen
+* What is the mission objective
+* What are we setting out to archive or to demonstrate?
+* How the assessment will spun up
+
+### Standard Operation Procedure (SOP) Checklist
+
+#### Preparation
 
 * Attack Plan
 * Objectives
@@ -16,7 +36,7 @@ What is the mission objective - what are we setting out to archive or demonstrat
 * Authorization
 * Notification
 
-### Execution
+#### Execution
 
 * Work Towards Objectives
 * Scanning
@@ -27,7 +47,7 @@ What is the mission objective - what are we setting out to archive or demonstrat
 * Status Updates
 * Syncs and Triage Meetings
 
-### Wrap Up
+#### Wrap Up
 
 * Clean-Up
 * Archival
@@ -36,6 +56,25 @@ What is the mission objective - what are we setting out to archive or demonstrat
 * Debrief
 * Reports
 * Reflect
+
+## Kickoff Meeting
+
+### Structuring
+
+* <ASSESSMENT_NAME>
+	* Tickets
+	* Scope
+		* Internal
+		* External
+	* Trust Agents
+	* Duration and Time Slots
+	* Personally Identifiable Information (PII)
+	* Notification Requrements
+	* Rules Of Engagement (ROE)
+	* Tools, Techniques and Procedures (TTP)
+	* Goal
+	* Measures of success/failure
+	* Emergencies
 
 ## General Questions
 
@@ -51,13 +90,14 @@ What is the mission objective - what are we setting out to archive or demonstrat
 * What is the account lockout policy? If we should encounter a login interface and attempt password spraying attacks, we would like to avoid causing lockout distruptions.
 
 * From the lockout policy we need the following informations:
-```
+
+```c
 - Lockout threshold
 - Lockout duration
 - Lockout observation window
 ```
 
-## PTK Related Questions
+## Penetration Testing Kit (PTK)
 
 * Has the PTK been deployed yet? If not, can it be dropped at the latest final business day before we start with our assessment? This is necessary to ensure that no issues arising during the deployment.
 * Does the PTK run on a laptop/workstation or in a vSphere environment?
@@ -65,7 +105,7 @@ What is the mission objective - what are we setting out to archive or demonstrat
 * Dies the PTK have full access to all hosts in scope of the network?
 * Is the PTK deployed on the same subnet as the employee clients?
 
-## Onsite Related Questions
+## Onsite
 
 * On arrival to the site, should we immediately introduce ourselves to the receptionist? Or are we permitted to simply walk in, see if we are stopped, and if not trying to find a desk or open network port to start with initial testing?
 * When onsite, are we permitted to interact with unlocked employee workstations?
