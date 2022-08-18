@@ -508,7 +508,7 @@ Depedending on your `Rules of Engangement (ROE)` i would recommend to set custom
 If your purchased `TLD` matches the domain of your company, the change is high that users do not raise
 concern if they get redirected to the same `login page` you copied your landing page from.
 
-Example:
+###### Example
 
 ```c
 Original domain: examplecompany.io
