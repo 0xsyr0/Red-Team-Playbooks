@@ -1,9 +1,9 @@
 # 3 Delivery
 
-| Name | Description  | URL |
+| Name | Description | URL |
 | --- | --- | --- |
-| The Social-Engineer Toolkit (SET) |  | https://github.com/trustedsec/social-engineer-toolkit |
 | Gophish |  | https://github.com/gophish/gophish |
+| The Social-Engineer Toolkit (SET) |  | https://github.com/trustedsec/social-engineer-toolkit |
 
 # Phishing Server Server Installation
 
@@ -200,7 +200,7 @@ Subsystem sftp	/usr/lib/openssh/sftp-server
 #	ForceCommand cvs server
 ```
 
-### Restart SSHD Daemon
+### Restart sshd Daemon
 
 ```c
 root@phishingserver:~# systemctl restart sshd
