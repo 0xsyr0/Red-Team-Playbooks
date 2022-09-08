@@ -92,8 +92,8 @@ root@c2:~/.scripts# cat iptables.sh
 /usr/sbin/netfilter-persistent save
 /usr/sbin/iptables-save > /root/custom-ip-tables-rules
 
-root@c2:~# chmod +x iptables.sh
-root@c2:~# ./iptables.sh
+root@c2:~/.scripts# chmod +x iptables.sh
+root@c2:~/.scripts# ./iptables.sh
 ```
 
 It is recommendet to only allow access from known `IP addresses`!
@@ -108,7 +108,7 @@ root@c2:~# crontab -e
 ### Update fstab
 
 ```c
-root@c2:~# vi /etc/fstab
+root@c2:~# cat /etc/fstab
 proc  /proc       proc    defaults,hidepid=2    0    0
 none  /dev/pts    devpts  rw,gid=5,mode=620    0    0
 none  /run/shm    tmpfs   defaults    0    0
