@@ -1,5 +1,20 @@
 # 5 Installation
 
+## Table of Contents
+
+- [Tooling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/5-Installation/5-Installation.md#tooling)
+- [AMSI Bypass](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/5-Installation/5-Installation.md#amsi-bypass)
+    - [PowerShell Downgrade](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/5-Installation/5-Installation.md#powershell-downgrade)
+    - [Fabian Mosch / Matt Graeber Bypass](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/5-Installation/5-Installation.md#fabian-mosch--matt-graeber-bypass)
+    - [Hooking](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/5-Installation/5-Installation.md#hooking)
+    - [Memory Patching](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/5-Installation/5-Installation.md#memory-patching)
+    - [Forcing an Error](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/5-Installation/5-Installation.md#forcing-an-error)
+    - [Registry Key Modification](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/5-Installation/5-Installation.md#registry-key-modification)
+    - [DLL Hijacking](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/5-Installation/5-Installation.md#dll-hijacking)
+- [Windows Defender](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/5-Installation/5-Installation.md#windows-defender)
+
+## Tooling
+
 | Name | Description | URL |
 | --- | --- | --- |
 | ntlm_theft | A tool for generating multiple types of NTLMv2 hash theft files. | https://github.com/Greenwolf/ntlm_theft |
