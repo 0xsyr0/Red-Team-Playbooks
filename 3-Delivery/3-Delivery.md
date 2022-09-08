@@ -491,7 +491,7 @@ https://<DOMAIN>/?rid=<RID>
 
 ### Configuration
 
-For this example i created an account on `outlook.com` which i needed for sending emails. I highly recommend to configure a local mail server!
+For this example I created an account on `outlook.com` which I needed for sending emails. I highly recommend to configure a local mail server!
 
 For example by using `MailHog`.
 
@@ -520,7 +520,7 @@ For example by using `MailHog`.
 | Password: | ********************************* |
 | Ignore Certificate Errors: | Check |
 
-Depedending on your `Rules of Engangement (ROE)` i would recommend to set custom `Email Headers`.
+Depedending on your `Rules of Engangement (ROE)` I would recommend to set custom `Email Headers`.
 
 ##### Landing Pages
 
@@ -529,7 +529,7 @@ Depedending on your `Rules of Engangement (ROE)` i would recommend to set custom
 | Name: | https://confluence.<TARGET_DOMAIN> |
 | Import: | https://confluence.<TARGET_DOMAIN> |
 | Capture | Submitted Data: Check |
-| Capture Passwords: | Check | 
+| Capture Passwords: | Check |
 | Redirecto to: | https://confluence.<TARGET_DOMAIN> |
 
 If your purchased `TLD` matches the domain of your company, the change is high that users do not raise
@@ -550,11 +550,11 @@ No need to worry ;)
 | Field | Value |
 | --- | --- |
 | Name: | <ASSESSMENT_NAME> |
-| Envelope Sender: | EXAMPLE@outlook.com | 
+| Envelope Sender: | EXAMPLE@outlook.com |
 | Subject: | Security Monitoring Report, Endpoints and Applications |
 | Add Tracking Image: | Check |
 
-If you be able to get a leaked sample of an internal email or by `Spear Phishing` someone, i would recommend to
+If you be able to get a leaked sample of an internal email or by `Spear Phishing` someone, I would recommend to
 use the signature and formatting for more authenticity.
 
 Or you can use a sample like this.
