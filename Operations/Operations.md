@@ -274,7 +274,7 @@ root@operations:~# chown root /home/ops/.ssh/authorized_keys
 
 ### psad
 
-* copy psad psad.conf
+* copy psad.conf to /etc/psad/ if you already have one
 
 ### iptables
 
