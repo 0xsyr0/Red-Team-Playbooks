@@ -30,7 +30,7 @@ I tried as good as I can to all resources I used in this projects. If I used cod
 	- [7.1 Post Exploitation](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/7-Actions-on-Objective/7.1-Post-Exploitation.md)
 	- [7.2 Exfiltration](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/7-Actions-on-Objective/7.2-Exfiltration.md)
 
-## Books i used for the playbooks
+## Books I used for the playbooks
 
 - Red Team Development and Operations by Joe Vest & james Tubberville
 - RTFM by Ben Clark
