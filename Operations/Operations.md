@@ -87,6 +87,48 @@ assessment_name
 - 20220801_1508_10.10.1.106_smb_enumeration.png
 - 20220801_1508_10.10.1.106_smb_password_file.png
 
+### Collaborative Timeline
+
+I highly recommend to dump a `timeline.md` with the following notation
+into a internally hosted `Git Repository`.
+
+```c
+# <ASSESSMENT_NAME>
+
+## Timeline
+
+### Duration
+
+#### YYYY-MM-DD
+
+HH:MM <Task>, <DESCRIPTION>
+<COMMAND>
+```
+
+So it's easier to keep track of your actions and merge them later as
+input for the report.
+
+#### Example
+
+```c
+# RTA-01 Active Directory
+
+## Timeline
+
+### Duration 2022-08-01 - 2022-09-01
+
+#### 2022-08-01
+
+09:15 Reconnaissance, Port Scan Domain Controller
+$ nmap 192.168.1.10
+
+#### 2022-08-02
+
+...
+...
+...
+```
+
 ## Logging
 
 ### Basic Logging and Documentation Handling
