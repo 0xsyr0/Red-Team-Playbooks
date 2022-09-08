@@ -32,7 +32,7 @@ I tried as good as I can to all resources I used in this projects. If I used cod
 
 ## Books I used for the playbooks
 
-- Red Team Development and Operations by Joe Vest & james Tubberville
+- Red Team Development and Operations by Joe Vest & James Tubberville
 - RTFM by Ben Clark
 - RTFMv2 by Ben Clark & Nick Downer
 - PTFM by Tim Bryant
@@ -41,6 +41,6 @@ I tried as good as I can to all resources I used in this projects. If I used cod
 
 ## Special thanks and a huge shoutout to the following people
 
-IppSec, 0xdf, xct, John Hammond, Alh4zr3d, securibee, Paul Seekamp, Vickie Li, James Kettle, NahamSec, Jason Haddix, STÖK, carlospolop, Swissky, snovvcrash, RastaMouse, g0dmode, bigb0sss, g0tmi1k, md.d0x, gentilkiwi, byt3bl33d3r, cube0x0, HarmJ0y, S3cur3Th1sSh1t, PinkDraconian, PwnFunction, imaibou, christophetd and all the people behind these awesome repositories i referenced in this collection!
+IppSec, 0xdf, xct, John Hammond, Alh4zr3d, securibee, Paul Seekamp, Vickie Li, James Kettle, NahamSec, Jason Haddix, STÖK, carlospolop, Swissky, snovvcrash, RastaMouse, g0dmode, bigb0sss, g0tmi1k, md.d0x, gentilkiwi, byt3bl33d3r, cube0x0, HarmJ0y, S3cur3Th1sSh1t, PinkDraconian, PwnFunction, imaibou, christophetd and all the people behind these awesome repositories I referenced in this collection!
 
 Thank you all for your hard work, support and inspiration since the start of my hacking journey!
