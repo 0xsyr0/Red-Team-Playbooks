@@ -1,7 +1,20 @@
 # 2 Weaponization
 
+## Table of Contents
+
+- [Tooling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/2-Weaponization/2-Weaponization.md#Tooling)
+- [Spoofing Office Macro](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/2-Weaponization/2-Weaponization.md#Spoofing-Office-Macro)
+
+## Tooling
+
 | Name | Description | URL |
 | --- | --- | --- |
+| spoofing-office-macro | PoC of a VBA macro spawning a process with a spoofed parent and command line. | https://github.com/christophetd/spoofing-office-macro |
+
+## Spoofing Office Macro
+```c
+URL: https://github.com/christophetd/spoofing-office-macro
+```
 
 ### Previous
 
