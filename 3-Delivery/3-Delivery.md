@@ -29,6 +29,7 @@
 | Name | Description | URL |
 | --- | --- | --- |
 | Gophish | Open-Source Phishing Toolkit | https://github.com/gophish/gophish |
+| evilgophish | evilginx2 + gophish | https://github.com/fin3ss3g0d/evilgophish |
 | The Social-Engineer Toolkit (SET) | The Social-Engineer Toolkit (SET) repository from TrustedSec | https://github.com/trustedsec/social-engineer-toolkit |
 
 # Phishing Server Installation
