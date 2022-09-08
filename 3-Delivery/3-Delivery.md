@@ -41,7 +41,7 @@
 	* https://www.expireddomains.net/
 * Create a droplet on https://digitalocean.com
 
-After purchasing a domain, i recommend to add a `CAA` record for your upcoming `Let's Encrypt Certificate`.
+After purchasing a domain, I recommend to add a `CAA` record for your upcoming `Let's Encrypt Certificate`.
 
 Also it is needed to configure the `DNS servers` of `DigitalOcean`.
 
