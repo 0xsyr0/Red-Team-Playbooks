@@ -80,11 +80,10 @@
 
 * Ensure all questionnaire information has been completed.
 * If all in-scope IP addresses have been provided:
-
-* Double check if the provided IP addresses are really in scope! Especially when they provide subnet ranges (i.e. 10.0.0.0/24)
-* Are any systems are legacy or fragile systems which may need additional care to preserve uptime?
-* Does the target systems contain, store or process any PII or PCI data?
-* Does the network have any segmentations that we should aware of?
+	* Double check if the provided IP addresses are really in scope! Especially when they provide subnet ranges (i.e. 10.0.0.0/24)
+	* Are any systems are legacy or fragile systems which may need additional care to preserve uptime?
+	* Does the target systems contain, store or process any PII or PCI data?
+	* Does the network have any segmentations that we should aware of?
 * Will a valid domain user account be provided for testing, simulating the initial compromise of a single employee's credentials/workstation?
 * What is the biggest priority in protecting?
 * What is the account lockout policy? If we should encounter a login interface and attempt password spraying attacks, we would like to avoid causing lockout distruptions.
