@@ -139,28 +139,34 @@ $ nmap 192.168.1.10
 
 For adding `time and date` and the current `IP address`, add the required commands to either the `.bashrc` or to the `.zshrc`.
 
-### Bash local IP address
+### Bash: local IP address
 
 ```c
 PS1="[`date  +"%Y-%m-%d %H:%M"`]\[\033[01;31m\] `ip a | grep -A 1 eth0 | grep inet | awk '{ print $2 }' | cut -d '/' -f 1`\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] \$ "
 ```
 
-### Bash external IP address
+### Bash: external IP address
 
 ```c
 PS1='[`date  +"%Y-%m-%d %H:%M"`]\[\033[01;31m\] `curl -s ifconfig.co`\[\033[00m\] \[\033[01;34m\]\w\[\033[00m\] \$ '
 ```
 
-### ZSH local IP address
+### ZSH: local IP address
 
 ```c
 PS1="[20%D %T] %B%F{red}$(ip a | grep -A 1 eth0 | grep inet | awk '{ print $2 }' | cut -d '/' -f 1)%f%b %B%F{blue}%1~%f%b $ "
 ```
 
-### ZSH external IP address
+### ZSH: external IP address
 
 ```c
 PS1="[20%D %T] %B%F{red}$(curl -s ifconfig.co)%f%b %B%F{blue}%1~%f%b $ "
+```
+
+### ZSH: Kali Linux prompt with local IP address
+
+```c
+PROMPT="%F{white,bold}%W %* $(ip a | grep -A 1 eth0 | grep inet | awk '{ print $2 }' | cut -d '/' -f 1)"$'%F{%(#.blue.green)}\n┌──${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n'$prompt_symbol$'%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
 ```
 
 ### PowerShell
