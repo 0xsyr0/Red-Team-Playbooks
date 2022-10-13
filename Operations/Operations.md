@@ -12,7 +12,7 @@
 	- [Screenshot Naming Scheme](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Screenshot-Naming-Scheme)
 	- [Report Structure](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Report-Structure)
 - [Logging](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Logging)
-	- [Basic logging and Documentation Handling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Basic-Logging-and-Documentation-Handling)
+	- [Basic Logging and Documentation Handling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Basic-Logging-and-Documentation-Handling)
 - [Assessment Timeline](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Assessment-Timeline)
 - [Operations Server Installation](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Operations-Server-Installation)
 
