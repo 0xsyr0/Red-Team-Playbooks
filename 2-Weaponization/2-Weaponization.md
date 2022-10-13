@@ -12,9 +12,8 @@
 | spoofing-office-macro | PoC of a VBA macro spawning a process with a spoofed parent and command line. | https://github.com/christophetd/spoofing-office-macro |
 
 ## Spoofing Office Macro
-```c
-URL: https://github.com/christophetd/spoofing-office-macro
-```
+
+> https://github.com/christophetd/spoofing-office-macro
 
 ### Previous
 
