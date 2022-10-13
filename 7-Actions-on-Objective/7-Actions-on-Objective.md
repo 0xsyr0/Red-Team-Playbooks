@@ -1,3 +1,7 @@
+# 7 Actions on Objective
+
+## Table of Contents
+
 ### Previous
 
 - [6 Command-and-Control](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md)
