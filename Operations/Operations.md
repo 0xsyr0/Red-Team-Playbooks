@@ -2,17 +2,19 @@
 
 ## Table of Contents
 
-- [Tooling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#tooling)
-- [Golden Rules](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#golden-rules)
-- [Meetings](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#meetings)
-	- [Schedule](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#schedule)
-- [Reporting](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#reporting)
-- [Folder Structure](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#folder-structure)
-- [Screenshot Naming Scheme](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#screenshot-naming-scheme)
-- [Logging](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#logging)
-	- [Basic logging and Documentation Handling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#basic-logging-and-documentation-handling)
-- [Assessment Timeline](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#assessment-timeline)
-- [Operations Server Installation](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#operations-server-installation)
+- [Tooling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Tooling)
+- [Golden Rules](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Golden-Rules)
+- [Meetings](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Meetings)
+	- [Schedule](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Schedule)
+- [Reporting](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Reporting)
+	- [Folder Structure](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Folder-Structure)
+	- [Collaborative Timeline](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Folder-Structure)
+	- [Screenshot Naming Scheme](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Screenshot-Naming-Scheme)
+	- [Report Structure](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Report-Structure)
+- [Logging](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Logging)
+	- [Basic logging and Documentation Handling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Basic-Logging-and-Documentation-Handling)
+- [Assessment Timeline](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Assessment-Timeline)
+- [Operations Server Installation](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Operations-Server-Installation)
 
 ## Tooling
 
@@ -49,18 +51,6 @@
 
 ## Reporting
 
-### Report Structure
-
-* Executive summary
-* Technical summary
-* Assessment results
-	* Vulnerability descriptions
-	* Recommendations
-* Supporting information/evidence
-	* Screenshots
-	* Output from tools
-	* Methodology for testing
-
 ## Folder Structure
 
 ```c
@@ -81,12 +71,6 @@ assessment_name
 └── README.md
 ```
 
-### Screenshot Naming Scheme
-
-- 20220801_1508_10.10.1.106_nmap_tcp445.png
-- 20220801_1508_10.10.1.106_smb_enumeration.png
-- 20220801_1508_10.10.1.106_smb_password_file.png
-
 ### Collaborative Timeline
 
 I highly recommend to dump a `timeline.md` with the following notation
@@ -101,7 +85,7 @@ into a internally hosted `Git Repository`.
 
 #### YYYY-MM-DD
 
-HH:MM <Task>, <DESCRIPTION>
+HH:MM <TASK>, <DESCRIPTION>
 <COMMAND>
 ```
 
@@ -127,6 +111,66 @@ $ nmap 192.168.1.10
 ...
 ...
 ...
+```
+
+### Screenshot Naming Scheme
+
+- 20220801_1508_10.10.1.106_nmap_tcp445.png
+- 20220801_1508_10.10.1.106_smb_enumeration.png
+- 20220801_1508_10.10.1.106_smb_password_file.png
+
+### Report Structure
+
+* Executive summary
+* Technical summary
+* Assessment results
+	* Vulnerability descriptions
+	* Recommendations
+* Supporting information/evidence
+	* Screenshots
+	* Output from tools
+	* Methodology for testing
+
+### Example
+
+```c
+# <ASSESSMENT_NAME> ASSESSMENT REPORT
+#### <COMPANY>
+##### <REPORTER>
+
+## Table of Contents
+
+* 1. Introduction
+* 2. Executive Summary
+	- 2.1 Scope of Work (SoW)
+	- 2.2 Project Objectives
+	- 2.3 Assumption
+	- 2.4 Project Phases
+	- 2.5 Project Duration
+	- 2.6 Summary of Findings
+		- 2.6.1 Overall Posture
+		- 2.6.2 Risk Rating
+- 3. Methodology
+	- 3.1 Planning
+	- 3.2 Exploitation
+	- 3.3 Reporting
+- 4. Deliverables
+	- 4.1 Reconnaissance
+	- 4.2 Weaponization
+	- 4.3 Delivery
+	- 4.4 Exploitation
+	- 4.5 Installation
+	- 4.6 Command and Control
+	- 4.7 Actions on Objective
+- 5. Recommendations
+	- 5.1 Critical Risk
+	- 5.2 High Risk
+	- 5.3 Medium Risk
+	- 5.4 Low Risk
+- 6. References
+	- Appendix A
+	- Appendix B
+	- Appendix C
 ```
 
 ## Logging
