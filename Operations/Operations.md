@@ -121,18 +121,6 @@ $ nmap 192.168.1.10
 
 ### Report Structure
 
-* Executive summary
-* Technical summary
-* Assessment results
-	* Vulnerability descriptions
-	* Recommendations
-* Supporting information/evidence
-	* Screenshots
-	* Output from tools
-	* Methodology for testing
-
-### Example
-
 ```c
 # <ASSESSMENT_NAME> ASSESSMENT REPORT
 #### <COMPANY>
