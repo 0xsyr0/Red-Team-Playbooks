@@ -526,11 +526,11 @@ Depedending on your `Rules of Engangement (ROE)` I would recommend to set custom
 
 | Field | Value |
 | --- | --- |
-| Name: | https://confluence.<TARGET_DOMAIN> |
-| Import: | https://confluence.<TARGET_DOMAIN> |
+| Name: | https://confluence.<DOMAIN> |
+| Import: | https://confluence.<DOMAIN> |
 | Capture | Submitted Data: Check |
 | Capture Passwords: | Check |
-| Redirecto to: | https://confluence.<TARGET_DOMAIN> |
+| Redirecto to: | https://confluence.<DOMAIN> |
 
 If your purchased `TLD` matches the domain of your company, the change is high that users do not raise
 concern if they get redirected to the same `login page` you copied your landing page from.
@@ -569,7 +569,7 @@ Or you can use a sample like this.
 
 <p>Dear colleagues, We would like to provide more transparency with regard to our current vulnerabilities scans and have provided a report on the use of the installed applications and websites accessed in Confluence.</p>
 
-<p><a href="{{.URL}}">https://confluence.<TARGET_DOMAIN>/Security-Monitoring-Report-July-2022</a></p>
+<p><a href="{{.URL}}">https://confluence.<DOMAIN>/Security-Monitoring-Report-July-2022</a></p>
 
 <p>We plan to publish this report monthly to create a better awareness of information security within the company. If you have any questions, please do not hesitate to contact us.</p>
 
@@ -594,7 +594,7 @@ Enrich the email template with as much information as possible you gathered from
 I recommend to gather usernames from social media platforms like `LinkedIn`, `Instagram` and `Facebook`. The email address schema is also easy to figure out. For example by using `Maltego`, https://hunter.io or by simply checking their website for a `security.txt`.
 
 ```c
-https://<TARGET_DOMAIN>/security.txt
+https://<DOMAIN>/security.txt
 ```
 
 You may also find contact forms for your `sock puppets` to contact them and get a response.
@@ -609,7 +609,7 @@ Time to add a new campaign. Pretty straight forward.
 | --- | --- |
 | Campaign name: | <ASSESSMENT_NAME> |
 | Email Template: | <ASSESSMENT_NAME> |
-| Landing Page: | https://confluence.<TARGET_DOMAIN> |
+| Landing Page: | https://confluence.<DOMAIN> |
 | Launch Date: | Leave it as it is if you want to start directly after saving the campaign. |
 | Send Emails By: | By setting a date you can scale the interval of sending emails. I recommend to add 5 days from the start to not get in trouble with outlook.com. |
 | Sending Profile: | <ASSESSMENT_NAME> |
