@@ -17,27 +17,31 @@
 
 | Name | Description | URL |
 | --- | --- | --- |
-| ntlm_theft | A tool for generating multiple types of NTLMv2 hash theft files. | https://github.com/Greenwolf/ntlm_theft |
-| EXE_to_DLL | Converts a EXE into DLL | https://github.com/hasherezade/exe_to_dll |
-| Veil | Veil is a tool designed to generate metasploit payloads that bypass common anti-virus solutions. | https://github.com/Veil-Framework/Veil |
-| Donut | Generates x86, x64, or AMD64+x86 position-independent shellcode that loads .NET Assemblies, PE files, and other Windows payloads from memory and runs them with parameters. | https://github.com/TheWover/donut |
-| ScareCrow | Payload creation framework designed around EDR bypass. | https://github.com/optiv/ScareCrow |
-| Nimcrypt2 | .NET, PE, & Raw Shellcode Packer/Loader Written in Nim | https://github.com/icyguider/Nimcrypt2 |
-| NimHollow | Nim implementation of Process Hollowing using syscalls (PoC) | https://github.com/snovvcrash/NimHollow |
-| SysWhispers | SysWhispers helps with evasion by generating header/ASM files implants can use to make direct system calls. | https://github.com/m57/SysWhispers |
-| NimlineWhisperer2 | A tool for converting SysWhispers2 syscalls for use with Nim projects | https://github.com/ajpc500/NimlineWhispers2 |
-| OffensiveNim | Experiments in weaponizing Nim for implant development and general offensive operations. | https://github.com/0xsyr0/OffensiveNim |
-| OffensivePipeline | OffensivePipeline allows to download, compile (without Visual Studio) and obfuscate C# tools for Red Team exercises.  | https://github.com/Aetsu/OffensivePipeline |
-| PSByPassCLM | Bypass for PowerShell Constrained Language Mode | https://github.com/padovah4ck/PSByPassCLM |
-| Invoke-Obfuscation | PowerShell Obfuscator | https://github.com/danielbohannon/Invoke-Obfuscation |
-| mimikatz Obfuscator | This script downloads and slightly "obfuscates" the mimikatz project. | https://gist.github.com/imaibou/92feba3455bf173f123fbe50bbe80781 |
-| Simple Injector | A simple injector that uses LoadLibraryA | https://github.com/tomcarver16/SimpleInjector |
+| AMSI Bypass Powershell | This repo contains some Antimalware Scan Interface (AMSI) bypass / avoidance methods i found on different Blog Posts. | https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell |
+| AMSI.fail | AMSI.fail generates obfuscated PowerShell snippets that break or disable AMSI for the current process. | http://amsi.fail |
 | AmsiHook | AmsiHook is a project I created to figure out a bypass to AMSI via function hooking. | https://github.com/tomcarver16/AmsiHook |
+| AmsiScanBufferBypass | Bypass AMSI by patching AmsiScanBuffer | https://github.com/rasta-mouse/AmsiScanBufferBypass |
 | AMSITrigger v3 | The Hunt for Malicious Strings | https://github.com/RythmStick/AMSITrigger |
 | DefenderCheck | Identifies the bytes that Microsoft Defender flags on. | https://github.com/matterpreter/DefenderCheck |
-| AMSI.fail | AMSI.fail generates obfuscated PowerShell snippets that break or disable AMSI for the current process. | http://amsi.fail |
-| AmsiScanBufferBypass | Bypass AMSI by patching AmsiScanBuffer | https://github.com/rasta-mouse/AmsiScanBufferBypass |
-| AMSI Bypass Powershell | This repo contains some Antimalware Scan Interface (AMSI) bypass / avoidance methods i found on different Blog Posts. | https://github.com/S3cur3Th1sSh1t/Amsi-Bypass-Powershell |
+| Donut | Generates x86, x64, or AMD64+x86 position-independent shellcode that loads .NET Assemblies, PE files, and other Windows payloads from memory and runs them with parameters. | https://github.com/TheWover/donut |
+| EXE_to_DLL | Converts a EXE into DLL | https://github.com/hasherezade/exe_to_dll |
+| Freeze | Freeze is a payload toolkit for bypassing EDRs using suspended processes, direct syscalls, and alternative execution methods | https://github.com/optiv/Freeze |
+| hoaxshell | An unconventional Windows reverse shell, currently undetected by Microsoft Defender and various other AV solutions, solely based on http(s) traffic. | https://github.com/t3l3machus/hoaxshell |
+| Invoke-Obfuscation | PowerShell Obfuscator | https://github.com/danielbohannon/Invoke-Obfuscation |
+| mimikatz Obfuscator | This script downloads and slightly "obfuscates" the mimikatz project. | https://gist.github.com/imaibou/92feba3455bf173f123fbe50bbe80781 |
+| Nimcrypt2 | .NET, PE, & Raw Shellcode Packer/Loader Written in Nim | https://github.com/icyguider/Nimcrypt2 |
+| NimHollow | Nim implementation of Process Hollowing using syscalls (PoC) | https://github.com/snovvcrash/NimHollow |
+| NimlineWhisperer2 | A tool for converting SysWhispers2 syscalls for use with Nim projects | https://github.com/ajpc500/NimlineWhispers2 |
+| ntlm_theft | A tool for generating multiple types of NTLMv2 hash theft files. | https://github.com/Greenwolf/ntlm_theft |
+| Offensive-C-Sharp | I wrote these while learning AD Pentesting and windows hacking | https://github.com/winsecurity/Offensive-C-Sharp |
+| OffensiveNim | Experiments in weaponizing Nim for implant development and general offensive operations. | https://github.com/0xsyr0/OffensiveNim |
+| OffensivePipeline | OffensivePipeline allows to download, compile (without Visual Studio) and obfuscate C# tools for Red Team exercises.  | https://github.com/Aetsu/OffensivePipeline |
+| OffensiveRust | Rust Weaponization for Red Team Engagements. | https://github.com/trickster0/OffensiveRust |
+| PSByPassCLM | Bypass for PowerShell Constrained Language Mode | https://github.com/padovah4ck/PSByPassCLM |
+| ScareCrow | Payload creation framework designed around EDR bypass. | https://github.com/optiv/ScareCrow |
+| Simple Injector | A simple injector that uses LoadLibraryA | https://github.com/tomcarver16/SimpleInjector |
+| SysWhispers | SysWhispers helps with evasion by generating header/ASM files implants can use to make direct system calls. | https://github.com/m57/SysWhispers |
+| Veil | Veil is a tool designed to generate metasploit payloads that bypass common anti-virus solutions. | https://github.com/Veil-Framework/Veil |
 
 ## AMSI Bypass
 
