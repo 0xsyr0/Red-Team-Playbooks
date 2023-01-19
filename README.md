@@ -4,7 +4,7 @@
 
 # Red Teaming Playbooks
 
-This repository contains cutting-edge open-source tools, techniques and procedures that will help you during your Red Team assessments.
+This repository contains cutting-edge open-source tools, techniques and procedures that will help you during your Red Team engagements.
 
 I tried as good as I can to all resources I used in this projects. If I used code or other resources from you and you are not yet listed in the shoutout box below, feel free to reach out to me and I will add you asap.
 
