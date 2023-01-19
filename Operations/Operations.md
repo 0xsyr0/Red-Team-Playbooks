@@ -13,7 +13,7 @@
 	- [Report Structure](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Report-Structure)
 - [Logging](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Logging)
 	- [Basic Logging and Documentation Handling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Basic-Logging-and-Documentation-Handling)
-- [Assessment Timeline](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Assessment-Timeline)
+- [Engagement Timeline](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Engagement-Timeline)
 - [Operations Server Installation](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md#Operations-Server-Installation)
 
 ## Tooling
@@ -45,16 +45,16 @@
 
 | | Monday | Tuesday | Wednesday | Thursday | Friday | Saturday | Sunday |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| Start | Assessment Kickoff | | Sync | | Weekly Review | | |
+| Start | Engagement Kickoff | | Sync | | Weekly Review | | |
 | Weekly | Planning | | Sync | | Weekly Review | | |
-| Closing | Planning | | Sync | | Closing / Assessment Review | | |
+| Closing | Planning | | Sync | | Closing / Engagement Review | | |
 
 ## Reporting
 
 ## Folder Structure
 
 ```c
-assessment_name
+engagement_name
 ├── 0-operations
 ├── 1-osint
 ├── 2-recon
@@ -77,7 +77,7 @@ I highly recommend to dump a `timeline.md` with the following notation
 into a internally hosted `Git Repository`.
 
 ```c
-# <ASSESSMENT_NAME>
+# <ENGAGEMENT_NAME>
 
 ## Timeline
 
@@ -122,7 +122,7 @@ $ nmap 192.168.1.10
 ### Report Structure
 
 ```c
-# <ASSESSMENT_NAME> ASSESSMENT REPORT
+# <ENGAGEMENT_NAME> ENGAGEMENT REPORT
 #### <COMPANY>
 ##### <REPORTER>
 
@@ -247,15 +247,15 @@ Get-ChildItem -Path D: -File -System -Recurse | Tee-Object -FilePath "C:\temp\<F
 msf> spool <file>.log
 ```
 
-## Assessment Timeline
+## Engagement Timeline
 
 <p align="center">
-  <img src="https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/files/assessment_template.png">
+  <img src="https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/files/engagement_template.png">
 </p>
 
 ### Template
 
-[assessment_template.xmind](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/files/assessment_template.xmind)
+[engagement_template.xmind](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/files/engagement_template.xmind)
 
 ## Operations Server Installation
 
