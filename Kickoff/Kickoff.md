@@ -20,7 +20,7 @@
 * Why this scope has been chosen
 * What is the mission objective
 * What are we setting out to archive or to demonstrate?
-* How the assessment will spun up
+* How the engagement will spun up
 
 ### Standard Operation Procedure (SOP) Checklist
 
@@ -61,7 +61,7 @@
 
 ### Structuring
 
-* <ASSESSMENT_NAME>
+* <ENGAGEMENT_NAME>
 	* Tickets
 	* Scope
 		* Internal
@@ -98,7 +98,7 @@
 
 ## Penetration Testing Kit (PTK)
 
-* Has the PTK been deployed yet? If not, can it be dropped at the latest final business day before we start with our assessment? This is necessary to ensure that no issues arising during the deployment.
+* Has the PTK been deployed yet? If not, can it be dropped at the latest final business day before we start with our engagement? This is necessary to ensure that no issues arising during the deployment.
 * Does the PTK run on a laptop/workstation or in a vSphere environment?
 * If deployed on a laptop/workstation, has the virtual NIC been configured to be in "Bridged Mode"?
 * Dies the PTK have full access to all hosts in scope of the network?
