@@ -244,7 +244,7 @@ Get-ChildItem -Path D: -File -System -Recurse | Tee-Object -FilePath "C:\temp\<F
 ### Metasploit spool command
 
 ```c
-msf> spool <file>.log
+msf> spool <FILE>.log
 ```
 
 ## Engagement Timeline
