@@ -112,5 +112,10 @@
 * Can we test into the evening and after normal business hours?
 * Is there any dress code? Usually we are going for the high end of their dress code unless we are doing some physical social engineering.
 
+### Previous
+
+- [Kickoff](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Kickoff/Kickoff.md)
+
 ### Next
+
 - [Operations](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md)
