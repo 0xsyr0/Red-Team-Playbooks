@@ -69,7 +69,7 @@
 	* Trust Agents
 	* Duration and Time Slots
 	* Personally Identifiable Information (PII)
-	* Notification Requrements
+	* Notification Requirements
 	* Rules Of Engagement (ROE)
 	* Tools, Techniques and Procedures (TTP)
 	* Goal
