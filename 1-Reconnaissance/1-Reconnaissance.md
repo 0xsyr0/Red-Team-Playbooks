@@ -37,7 +37,7 @@
 
 ### Previous
 
-- [Operations](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Operations/Operations.md)
+- [Infrastructure](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/Infrastructure/Infrastructure.md)
 
 ### Next
 
