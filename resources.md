@@ -37,6 +37,7 @@
 
 | Name | Description | URL |
 | ---- | ----------- | --- |
+| RedTeam-OffensiveSecurity | Tools & Interesting Things for RedTeam Ops | https://github.com/bigb0sss/RedTeam-OffensiveSecurity |
 | Red_Team_Code_Snippets | random code snippets, useful for getting started | https://github.com/0xTriboulet/Red_Team_Code_Snippets |
 
 ## Management
