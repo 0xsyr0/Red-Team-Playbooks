@@ -42,6 +42,8 @@
 
 | Name | Description | URL |
 | ---- | ----------- | --- |
+| Red-Team-Management | Important documents for you to start a Red Team management | https://github.com/CyberSecurityUP/Red-Team-Management |
+| Red Team Interview Questions | Red team Interview Questions | https://github.com/HadessCS/Red-team-Interview-Questions |
 
 ## Onsite & Physical
 
