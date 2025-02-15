@@ -39,6 +39,7 @@
 | ---- | ----------- | --- |
 | RedTeam-OffensiveSecurity | Tools & Interesting Things for RedTeam Ops | https://github.com/bigb0sss/RedTeam-OffensiveSecurity |
 | Red_Team_Code_Snippets | random code snippets, useful for getting started | https://github.com/0xTriboulet/Red_Team_Code_Snippets |
+| Red Team Notes 2.0 | Red Team Notes 2.0 | https://dmcxblue.gitbook.io/red-team-notes-2-0 |
 
 ## Management
 
