@@ -37,9 +37,10 @@
 
 | Name | Description | URL |
 | ---- | ----------- | --- |
+| Home-Grown-Red-Team | This repo is a resource for various red teaming techniques and tools based on open source software and non-commerical tools. | https://github.com/assume-breach/Home-Grown-Red-Team |
 | RedTeam-OffensiveSecurity | Tools & Interesting Things for RedTeam Ops | https://github.com/bigb0sss/RedTeam-OffensiveSecurity |
-| Red_Team_Code_Snippets | random code snippets, useful for getting started | https://github.com/0xTriboulet/Red_Team_Code_Snippets |
 | Red Team Notes 2.0 | Red Team Notes 2.0 | https://dmcxblue.gitbook.io/red-team-notes-2-0 |
+| Red_Team_Code_Snippets | random code snippets, useful for getting started | https://github.com/0xTriboulet/Red_Team_Code_Snippets |
 
 ## Management
 
