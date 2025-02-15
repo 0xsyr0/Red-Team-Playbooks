@@ -6,6 +6,10 @@
 
 ![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/m/0xsyr0/Red-Team-Playbooks) ![GitHub contributors](https://img.shields.io/github/contributors/0xsyr0/Red-Team-Playbooks)
 
+> [!NOTE]
+> I am currently in the process of moving the notes to GitBook which takes quite some time and after that, I am going to rework and finalize version 1.0 of the playbooks.
+> Stay curious!
+
 This repository contains cutting-edge open-source tools, techniques and procedures that will help you during your Red Team engagements.
 
 I tried as good as I can to all resources I used in this projects. If I used code or other resources from you and you are not yet listed in the shoutout box below, feel free to reach out to me and I will add you asap.

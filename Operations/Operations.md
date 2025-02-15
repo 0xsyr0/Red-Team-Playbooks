@@ -133,37 +133,47 @@ $ nmap 192.168.1.10
 
 ## Table of Contents
 
-* 1. Introduction
-* 2. Executive Summary
-	- 2.1 Scope of Work (SoW)
-	- 2.2 Project Objectives
-	- 2.3 Assumption
-	- 2.4 Project Phases
-	- 2.5 Project Duration
-	- 2.6 Summary of Findings
-		- 2.6.1 Overall Posture
-		- 2.6.2 Risk Rating
+- 1. Introduction
+- 2. Executive Summary
+  - 2.1 Scope of Work (SoW)
+  - 2.2 Project Objectives
+  - 2.3 Assumption
+  - 2.4 Project Phases
+    - 2.4.1 Phase 1: <PHASE_Name>
+    - 2.4.2 Phase 2: <PHASE_NAME>
+  - 2.5 Project Duration
+  - 2.6 Summary of Findings
+    - 2.6.1 Initial Approach
+      - 2.6.1.1 <FINDING>
+      - 2.6.1.2 <FINDING>
+      - 2.6.1.3 <FINDING>
+    - 2.6.2 Overall Posture
+    - 2.6.3 Risk Rating
+      - 2.6.3.1 Critical
+      - 2.6.3.2 High
+      - 2.6.3.3 Medium
+      - 2.6.3.4 Low
 - 3. Methodology
-	- 3.1 Planning
-	- 3.2 Exploitation
-	- 3.3 Reporting
+    - 3.1 Planning
+    - 3.2 Exploitation
+    - 3.3 Reporting
 - 4. Deliverables
-	- 4.1 Reconnaissance
-	- 4.2 Weaponization
-	- 4.3 Delivery
-	- 4.4 Exploitation
-	- 4.5 Installation
-	- 4.6 Command and Control
-	- 4.7 Actions on Objective
+    - 4.1 Reconnaissance
+    - 4.2 Weaponization
+    - 4.3 Delivery
+    - 4.4 Exploitation
+    - 4.5 Installation
+    - 4.6 Command and Control
+    - 4.7 Actions on Objective
 - 5. Recommendations
-	- 5.1 Critical Risk
-	- 5.2 High Risk
-	- 5.3 Medium Risk
-	- 5.4 Low Risk
+    - 5.1 Critical Risk
+    - 5.2 High Risk
+    - 5.3 Medium Risk
+    - 5.4 Low Risk
 - 6. References
-	- Appendix A
-	- Appendix B
-	- Appendix C
+    - Appendix A
+    - Appendix B
+    - Appendix C
 ```
 
 ## Logging
