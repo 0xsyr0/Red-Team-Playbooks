@@ -8,6 +8,7 @@
 - [macro_pack](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/2-Weaponization/2-Weaponization.md#macro_pack)
 - [Malicious iFrame](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/2-Weaponization/2-Weaponization.md#Malicious-iFrame)
 - [MSC Files](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/2-Weaponization/2-Weaponization.md#MSC-Files)
+- [Trust Center Locations](https://github.com/0xsyr0/Red-Team-Playbooks/blob/master/2-Weaponization/2-Weaponization.md#Trust-Center-Locations)
 
 ## Tooling
 
@@ -251,6 +252,15 @@ PS C:\macro_pack_pro> echo .\<FILE>.bin | marco_pack.exe -t SHELLCODE -G .\<FILE
 ```xml
 xsl.loadXML(unescape("<SCRIPT>"))
 ```
+
+## Trust Center Locations
+
+- %ProgramFiles%\Microsoft Office\root\Office16\Library\
+- %ProgramFiles%\Microsoft Office\root\Office16\STARTUP\
+- %ProgramFiles%\Microsoft Office\root\Office16\XLSTART\
+- %ProgramFiles%\Microsoft Office\root\Templates\
+- %APPDATA%\Microsoft\Excel\XLSTART\
+- %APPDATA%\Microsoft\Templates\
 
 ### Previous
 
