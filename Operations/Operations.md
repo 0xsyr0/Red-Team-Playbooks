@@ -216,6 +216,18 @@ PS1="[20%D %T] %B%F{red}$(curl -s ifconfig.co)%f%b %B%F{blue}%1~%f%b $ "
 PROMPT="%F{white,bold}%W %* $(ip a | grep -A 1 eth0 | grep inet | awk '{ print $2 }' | cut -d '/' -f 1)"$'%F{%(#.blue.green)}\n┌──${debian_chroot:+($debian_chroot)─}${VIRTUAL_ENV:+($(basename $VIRTUAL_ENV))─}(%B%F{%(#.red.blue)}%n'$prompt_symbol$'%m%b%F{%(#.blue.green)})-[%B%F{reset}%(6~.%-1~/…/%4~.%5~)%b%F{%(#.blue.green)}]\n└─%B%(#.%F{red}#.%F{blue}$)%b%F{reset} '
 ```
 
+### CMD
+
+For `CMD` paste it into the open terminal.
+
+```c
+for /f "tokens=2 delims=:" %i in ('ipconfig ^| findstr /i "IPv4"') do @set MyIP=%i
+```
+
+```c
+prompt [%MyIP: =%]$S$P$G
+```
+
 ### PowerShell
 
 For `PowerShell` paste it into the open terminal.
