@@ -232,7 +232,24 @@ or
 
 ```c
 for /f "tokens=2 delims=:" %i in ('ipconfig ^| findstr /i "IPv4 Address"') do @set IP=%i & @set IP=%IP: =%
-prompt [$T][$IP] $P$G
+```
+
+```c
+prompt $T $P [$IP]$G
+```
+
+or
+
+```c
+for /f "tokens=2 delims=:" %i in ('ipconfig ^| findstr /i "IPv4 Address"') do @set IP=%i & @set IP=%IP: =%
+```
+
+```c
+for /f "tokens=1 delims=." %t in ("%TIME%") do @set TS=%t
+```
+
+```c
+prompt [%TS%] [%IP%] $P$G
 ```
 
 ### PowerShell
