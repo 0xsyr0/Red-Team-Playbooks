@@ -231,17 +231,11 @@ prompt [%MyIP: =%]$S$P$G
 or
 
 ```c
-for /f "tokens=2 delims=:" %i in ('ipconfig ^| findstr /i "IPv4 Address"') do @set IP=%i & @set IP=%IP: =%
+for /f "tokens=2 delims=:" %i in ('ipconfig ^| findstr /i "IPv4 Address"') do @set IP=%i
 ```
 
 ```c
-prompt $T $P [$IP]$G
-```
-
-or
-
-```c
-for /f "tokens=2 delims=:" %i in ('ipconfig ^| findstr /i "IPv4 Address"') do @set IP=%i & @set IP=%IP: =%
+set IP=%IP: =%
 ```
 
 ```c
