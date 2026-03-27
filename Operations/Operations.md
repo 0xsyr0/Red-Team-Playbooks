@@ -228,6 +228,13 @@ for /f "tokens=2 delims=:" %i in ('ipconfig ^| findstr /i "IPv4"') do @set MyIP=
 prompt [%MyIP: =%]$S$P$G
 ```
 
+or
+
+```c
+for /f "tokens=2 delims=:" %i in ('ipconfig ^| findstr /i "IPv4 Address"') do @set IP=%i & @set IP=%IP: =%
+prompt [$T][$IP] $P$G
+```
+
 ### PowerShell
 
 For `PowerShell` paste it into the open terminal.
